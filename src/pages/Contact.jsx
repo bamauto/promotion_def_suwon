@@ -41,16 +41,29 @@ const Contact = () => {
     return (
         <>
             <Helmet>
-                <title>문의하기 | 분당 서우실장 실시간 예약 & 상담</title>
-                <meta name="description" content="분당 전 지역 24시간 실시간 예약 문의. 전화, 카카오톡, 텔레그램으로 편하게 연락주세요. 친절하고 빠른 상담을 약속드립니다." />
-                <link rel="canonical" href="https://bundang-entertainment.com/contact" />
+                <title>24시간 실시간 예약 | 분당 서우실장 전화·카톡·텔레그램</title>
+                <meta name="description" content="분당 하이퍼블릭·가라오케 24시간 실시간 예약 | 전화 010-2626-4833 | 카카오톡·텔레그램 @pbsewoo | 1분 내 빠른 답변 | 맞춤형 코스 추천 | 정찰제 가격 안내" />
+                <meta name="keywords" content="분당 예약, 분당 상담, 분당 하이퍼블릭 예약, 서우실장 연락처, 분당 유흥 문의, 분당 가라오케 예약" />
+                <meta property="og:title" content="24시간 실시간 예약 | 분당 서우실장 ☎ 010-2626-4833" />
+                <meta property="og:description" content="분당 하이퍼블릭·가라오케 | 1분 내 빠른 답변 | 전화·카톡·텔레그램" />
+                <meta property="og:image" content="https://bundanghipublic.com/og-contact.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:image:alt" content="분당 서우실장 24시간 예약 상담" />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="ko_KR" />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:title" content="24시간 예약 | 분당 서우실장" />
+                <meta property="twitter:description" content="1분 내 빠른 답변 | 전화·카톡·텔레그램 @pbsewoo" />
+                <meta property="twitter:image" content="https://bundanghipublic.com/og-contact.jpg" />
+                <link rel="canonical" href="https://bundanghipublic.com/contact" />
             </Helmet>
             <SchemaJsonLd data={{
                 "@context": "https://schema.org",
                 "@type": "ContactPage",
                 "name": "분당 서우실장 예약 문의",
                 "description": "24시간 실시간 예약 및 견적 상담",
-                "url": "https://bundang-entertainment.com/contact"
+                "url": "https://bundanghipublic.com/contact"
             }} />
 
             <div className="pt-28 md:pt-36 min-h-screen bg-slate-950 relative overflow-hidden">

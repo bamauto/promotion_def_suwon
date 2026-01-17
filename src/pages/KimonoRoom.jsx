@@ -1,23 +1,25 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import SchemaJsonLd, { generateServiceSchema } from '../components/SchemaJsonLd';
+import SchemaJsonLd, { generateServiceSchema, generateFAQSchema } from '../components/SchemaJsonLd';
+import RelatedServices from '../components/RelatedServices';
+import TableOfContents from '../components/TableOfContents';
 import { Sparkles, CheckCircle, Phone, MapPin, DollarSign, CloudRain, Star, HelpCircle, Utensils, Flower2 } from 'lucide-react';
 
 const SectionTitle = ({ title, subtitle }) => (
     <div className="text-center mb-16 relative">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-red-500/10 rounded-full blur-2xl"></div>
-        <h3 className="text-amber-400 font-bold tracking-[0.2em] text-sm md:text-base uppercase mb-3 animate-fade-in-up">{subtitle}</h3>
+        <span className="text-amber-400 font-bold tracking-[0.2em] text-sm md:text-base uppercase mb-3 animate-fade-in-up block">{subtitle}</span>
         <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-red-100 to-red-300 relative z-10 animate-fade-in-up delay-100 drop-shadow-sm">{title}</h1>
         <div className="w-1 h-12 bg-gradient-to-b from-red-500 to-transparent mx-auto mt-6"></div>
     </div>
 );
 
-const ContentBlock = ({ title, children }) => (
-    <div className="mb-12 bg-slate-900/30 p-8 rounded-2xl border border-slate-800/50 backdrop-blur-sm hover:border-red-500/20 transition-colors">
-        <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+const ContentBlock = ({ title, children, id }) => (
+    <div id={id} className="mb-12 bg-slate-900/30 p-8 rounded-2xl border border-slate-800/50 backdrop-blur-sm hover:border-red-500/20 transition-colors">
+        <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <div className="w-1.5 h-8 bg-red-500 rounded-full"></div>
             {title}
-        </h3>
+        </h2>
         <div className="text-slate-300 leading-relaxed text-lg font-light space-y-4">
             {children}
         </div>
@@ -31,6 +33,9 @@ const VenueCard = ({ venue }) => (
             <img
                 src={venue.img}
                 alt={venue.imgAlt}
+                loading="lazy"
+                width="400"
+                height="256"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out"
             />
             <div className="absolute top-4 right-4 z-20 bg-gradient-to-r from-red-600 to-red-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase shadow-lg tracking-wider">
@@ -79,11 +84,11 @@ const venues = {
         {
             id: 'km-1',
             name: '분당 기모노룸 A점',
-            type: 'Traditional Ryokan',
+            type: 'Kimono Costume',
             location: '분당 미금역 2번 출구',
             price: '코스 요리 포함',
-            desc: '일본 교토의 료칸을 그대로 옮겨온 듯한 정통 기모노 룸. 다다미 방에서 즐기는 정갈한 사케와 가이세키 요리, 그리고 기모노를 입은 매니저들의 극진한 의전 서비스를 경험할 수 있습니다.',
-            features: ['전통 다다미', '사케 소믈리에', '가이세키 요리', '의전 서비스'],
+            desc: '화려한 기모노와 유카타를 입은 매니저들의 이색적인 서비스를 경험할 수 있는 테마 룸살롱. 정갈한 사케와 함께 기억에 남는 특별한 시간을 선사합니다.',
+            features: ['기모노 의상', '사케 소믈리에', '프리미엄 안주', '의전 서비스'],
             img: kimonoRoomLogo,
             imgAlt: '분당 기모노룸 A점 로고'
         },
@@ -102,19 +107,57 @@ const venues = {
 };
 
 const KimonoRoom = () => {
+    const faqList = [
+        {
+            question: "옷이 불편해서 잘 못 놀지 않나요?",
+            answer: "걱정하지 마세요. 개량된 퓨전 기모노라 활동성이 좋으며, 오히려 살짝 노출된 라인이 더욱 매혹적입니다."
+        },
+        {
+            question: "일본어를 해야 하나요?",
+            answer: "아닙니다. (웃음) 컨셉만 일본풍일 뿐, 전원 한국인 매니저이며 의사소통에 전혀 문제 없습니다."
+        },
+        {
+            question: "안주는 일식만 나오나요?",
+            answer: "기본 과일안주 외에도 튀김, 탕 등 간단한 안주가 준비되어 있으며, 배달 음식도 허용됩니다."
+        }
+    ];
+
+    const sections = [
+        { id: "definition", title: "1. 기모노룸의 매력" },
+        { id: "recommendation", title: "2. 추천 업소" },
+        { id: "system", title: "3. 이용 시스템 및 서비스" },
+        { id: "faq", title: "4. 이용 꿀팁 및 FAQ" }
+    ];
+
+    const serviceSchema = generateServiceSchema(
+        "Kimono Room",
+        "분당 기모노룸 예약 및 가격. 기모노 의상 테마의 이색 프리미엄 룸살롱.",
+        "https://bundanghipublic.com/bundang-kimono-room-guide",
+        "160000"
+    );
+
+    const faqSchema = generateFAQSchema(faqList);
+
     return (
         <>
             <Helmet>
-                <title>분당 기모노룸 추천 & 가격 | 이색 코스튬 테마</title>
-                <meta name="description" content="분당 기모노룸, 료칸 컨셉의 이색 술집 추천. 다다미 룸에서 즐기는 사케 한 잔과 기모노 코스튬. 특별한 접대가 필요할 땐 서우실장에게 예약하세요." />
-                <meta name="keywords" content="분당 기모노룸, 분당 이색 술집, 분당 코스튬 바, 분당 료칸 술집, 분당 접대 장소, 미금 기모노룸, 정자 기모노룸" />
-                <link rel="canonical" href="https://bundang-entertainment.com/bundang-kimono-room-guide" />
+                <title>분당 기모노룸 가격 예약 | 일본 테마 NO.1 서우실장</title>
+                <meta name="description" content="분당 기모노룸 완벽 가이드 | 기모노·유카타 의상 테마 | 매혹적인 일본 감성 | 프라이빗 서비스 | 전 지역 픽업 | 24시간 예약 ☎ 010-2626-4833" />
+                <meta name="keywords" content="분당 기모노룸, 분당 기모노 가격, 분당 기모노 예약, 분당 일본식 테마, 분당 이색 유흥, 분당 유카타" />
+                <meta property="og:title" content="분당 기모노룸 가격 예약 | NO.1 서우실장" />
+                <meta property="og:description" content="기모노·유카타 의상 테마 | 매혹적인 일본 감성 | 24시간 예약 ☎ 010-2626-4833" />
+                <meta property="og:image" content="https://bundanghipublic.com/og-kimono-room.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="ko_KR" />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:title" content="분당 기모노룸 | NO.1 서우실장" />
+                <meta property="twitter:description" content="기모노·유카타 의상 테마 | 매혹적인 감성 | 24시간 예약" />
+                <meta property="twitter:image" content="https://bundanghipublic.com/og-kimono-room.jpg" />
+                <link rel="canonical" href="https://bundanghipublic.com/bundang-kimono-room-guide" />
             </Helmet>
-            <SchemaJsonLd data={generateServiceSchema(
-                "Kimono Room",
-                "분당 기모노룸 예약 및 가격. 일본 료칸 스타일의 이색 테마 룸.",
-                "https://bundang-entertainment.com/bundang-kimono-room-guide"
-            )} />
+            <SchemaJsonLd data={[serviceSchema, faqSchema]} />
 
             <div className="pt-24 md:pt-32 min-h-screen bg-slate-950">
                 <div className="container mx-auto px-4 pb-12 max-w-6xl">
@@ -124,16 +167,18 @@ const KimonoRoom = () => {
                     <div className="mb-20 text-center max-w-4xl mx-auto">
                         <p className="text-xl text-slate-300 leading-relaxed font-light">
                             분당 도심 속에서 만나는 <strong className="text-rose-400">작은 일본</strong>.<br />
-                            고즈넉한 다다미 방의 정취와 화려한 기모노의 색채가 어우러진<br />
-                            이색적인 공간에서 특별한 추억을 만들어 보세요.
+                            화려한 기모노와 유카타를 입은 매니저들이 선사하는<br />
+                            이색적인 서비스로 특별한 추억을 만들어 보세요.
                         </p>
                     </div>
 
+                    <TableOfContents sections={sections} />
+
                     {/* 1. Definition */}
-                    <ContentBlock title="1. 기모노룸의 매력">
+                    <ContentBlock id="definition" title="1. 기모노룸의 매력">
                         <p>
-                            기모노룸은 <span className="text-rose-400 font-bold">일본 료칸(Ryokan)</span>을 모티브로 한 테마형 룸싸롱입니다.
-                            입구부터 느껴지는 히노끼 향과 다다미 바닥, 그리고 은은한 조명이 몽환적인 분위기를 자아냅니다.
+                            기모노룸은 <span className="text-rose-400 font-bold">일본 전통 의상</span>을 테마로 한 이색 룸살롱입니다.
+                            매니저들이 화려한 기모노와 유카타를 착용하고 서비스를 제공하여, 일상에서 벗어난 특별한 분위기를 연출합니다.
                         </p>
                         <p>
                             가장 큰 차별점은 역시 <strong>의상(Costume)</strong>입니다. 매니저들이 화려한 색감의 기모노나 유카타를 입고 의전 서비스를 제공하며,
@@ -142,7 +187,7 @@ const KimonoRoom = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                             <div className="bg-slate-800 p-4 rounded-xl border border-slate-700 flex items-center justify-center gap-3">
                                 <span className="text-rose-500 font-bold text-lg">Theme</span>
-                                <span className="text-slate-300">료칸 & 다다미 인테리어</span>
+                                <span className="text-slate-300">기모노 & 유카타 의상</span>
                             </div>
                             <div className="bg-slate-800 p-4 rounded-xl border border-slate-700 flex items-center justify-center gap-3">
                                 <span className="text-rose-500 font-bold text-lg">Costume</span>
@@ -152,7 +197,7 @@ const KimonoRoom = () => {
                     </ContentBlock>
 
                     {/* 2. Recommendations */}
-                    <div className="mb-24">
+                    <div id="recommendation" className="mb-24">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-1.5 h-8 bg-rose-500 rounded-full"></div>
                             <h2 className="text-3xl font-bold text-white">2. 분당 기모노룸 추천 목록</h2>
@@ -163,7 +208,7 @@ const KimonoRoom = () => {
                     </div>
 
                     {/* 3. System & Pricing */}
-                    <ContentBlock title="3. 이용 시스템 및 서비스">
+                    <ContentBlock id="system" title="3. 이용 시스템 및 서비스">
                         <p>
                             기본적인 시스템은 퍼블릭과 유사하나, <strong>'의전 서비스'</strong>에 더욱 특화되어 있습니다.
                             술을 따르는 예법이나 대화를 이끌어가는 매너 등에서 일본 특유의 섬세한 접대 문화를 느끼실 수 있습니다.
@@ -207,7 +252,7 @@ const KimonoRoom = () => {
                     </ContentBlock>
 
                     {/* 4. FAQ */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+                    <div id="faq" className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
                         <div className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800">
                             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                                 <Star className="text-red-500" /> 서우실장의 이용 Tip
@@ -229,14 +274,12 @@ const KimonoRoom = () => {
                                 <HelpCircle className="text-red-500" /> 자주 묻는 질문 (FAQ)
                             </h3>
                             <div className="space-y-6">
-                                <div>
-                                    <p className="font-bold text-red-400 mb-1">Q. 옷이 불편해서 잘 못 놀지 않나요?</p>
-                                    <p className="text-slate-300 text-sm">A. 걱정하지 마세요. 개량된 퓨전 기모노라 활동성이 좋으며, 오히려 살짝 노출된 라인이 더욱 매혹적입니다.</p>
-                                </div>
-                                <div>
-                                    <p className="font-bold text-red-400 mb-1">Q. 일본어를 해야 하나요?</p>
-                                    <p className="text-slate-300 text-sm">A. 아닙니다. (웃음) 컨셉만 일본풍일 뿐, 전원 한국인 매니저이며 의사소통에 전혀 문제 없습니다.</p>
-                                </div>
+                                {faqList.map((faq, index) => (
+                                    <div key={index}>
+                                        <p className="font-bold text-red-400 mb-1">Q. {faq.question}</p>
+                                        <p className="text-slate-300 text-sm">A. {faq.answer}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -253,6 +296,8 @@ const KimonoRoom = () => {
                             <Phone fill="currentColor" size={20} /> 010-2626-4833 테마 룸 예약
                         </button>
                     </div>
+
+                    <RelatedServices />
 
                 </div>
             </div>

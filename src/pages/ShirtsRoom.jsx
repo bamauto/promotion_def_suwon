@@ -1,23 +1,25 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import SchemaJsonLd, { generateServiceSchema } from '../components/SchemaJsonLd';
+import SchemaJsonLd, { generateServiceSchema, generateFAQSchema } from '../components/SchemaJsonLd';
+import RelatedServices from '../components/RelatedServices';
+import TableOfContents from '../components/TableOfContents';
 import { Sparkles, CheckCircle, Phone, MapPin, DollarSign, Briefcase, Shirt, Info, Star, HelpCircle } from 'lucide-react';
 
 const SectionTitle = ({ title, subtitle }) => (
     <div className="text-center mb-16 relative">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl"></div>
-        <h3 className="text-amber-400 font-bold tracking-[0.2em] text-sm md:text-base uppercase mb-3 animate-fade-in-up">{subtitle}</h3>
+        <span className="text-amber-400 font-bold tracking-[0.2em] text-sm md:text-base uppercase mb-3 animate-fade-in-up block">{subtitle}</span>
         <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-300 relative z-10 animate-fade-in-up delay-100 drop-shadow-sm">{title}</h1>
         <div className="w-1 h-12 bg-gradient-to-b from-blue-500 to-transparent mx-auto mt-6"></div>
     </div>
 );
 
-const ContentBlock = ({ title, children }) => (
-    <div className="mb-12 bg-slate-900/30 p-8 rounded-2xl border border-slate-800/50 backdrop-blur-sm hover:border-blue-500/20 transition-colors">
-        <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+const ContentBlock = ({ title, children, id }) => (
+    <div id={id} className="mb-12 bg-slate-900/30 p-8 rounded-2xl border border-slate-800/50 backdrop-blur-sm hover:border-blue-500/20 transition-colors">
+        <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <div className="w-1.5 h-8 bg-blue-500 rounded-full"></div>
             {title}
-        </h3>
+        </h2>
         <div className="text-slate-300 leading-relaxed text-lg font-light space-y-4">
             {children}
         </div>
@@ -31,6 +33,9 @@ const VenueCard = ({ venue }) => (
             <img
                 src={venue.img}
                 alt={venue.imgAlt}
+                loading="lazy"
+                width="400"
+                height="256"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out"
             />
             <div className="absolute top-4 right-4 z-20 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase shadow-lg tracking-wider">
@@ -124,19 +129,57 @@ const venues = {
 };
 
 const ShirtsRoom = () => {
+    const faqList = [
+        {
+            question: "셔츠룸과 하이퍼블릭의 차이는?",
+            answer: "하이퍼블릭은 외모 퀄리티가 조금 더 높고, 셔츠룸은 수위와 마인드(터치 등)가 훨씬 높습니다. 노는 분위기를 원하시면 셔츠룸이 좋습니다."
+        },
+        {
+            question: "복장은 셔츠만 입나요?",
+            answer: "네, 기본적으로 흰색 와이셔츠만 착용하는 '하의실종' 컨셉입니다. 이것이 셔츠룸만의 시그니처입니다."
+        },
+        {
+            question: "1인 방문도 가능한가요?",
+            answer: "네, 혼자 오셔서 편안하게 즐기시는 분들도 많습니다. 어색하지 않게 케어해 드립니다."
+        }
+    ];
+
+    const sections = [
+        { id: "definition", title: "1. 셔츠룸이란?" },
+        { id: "recommendation", title: "2. 추천 업소" },
+        { id: "system", title: "3. 이용 시스템 및 가격" },
+        { id: "faq", title: "4. 이용 꿀팁 및 FAQ" }
+    ];
+
+    const serviceSchema = generateServiceSchema(
+        "Shirts Room Club",
+        "분당 셔츠룸 가격 및 시스템 안내. 비즈니스 접대에 최적화된 화이트 셔츠 컨셉.",
+        "https://bundanghipublic.com/bundang-shirtsroom-guide",
+        "130000"
+    );
+
+    const faqSchema = generateFAQSchema(faqList);
+
     return (
         <>
             <Helmet>
-                <title>분당 셔츠룸 추천 & 시스템 | 비즈니스 접대 1순위</title>
-                <meta name="description" content="분당 셔츠룸 가격, 인사 시스템, 터치 수위 등 초보자를 위한 상세 가이드. 서현, 야탑, 판교 화이트 셔츠룸 예약은 서우실장에게 문의하세요." />
-                <meta name="keywords" content="분당 셔츠룸, 분당 셔츠바, 분당 비즈니스 룸, 분당 셔츠룸 가격, 분당 셔츠룸 시스템, 분당 셔츠룸 추천, 야탑 셔츠룸" />
-                <link rel="canonical" href="https://bundang-entertainment.com/bundang-shirtsroom-guide" />
+                <title>분당 셔츠룸 가격 예약 | 이색 테마 NO.1 서우실장</title>
+                <meta name="description" content="분당 셔츠룸 완벽 가이드 | 화이트셔츠 이색 컨셉 | 정자·서현·판교 추천 업소 | 프라이빗 룸 완비 | 투명한 주대 | 24시간 예약 ☎ 010-2626-4833" />
+                <meta name="keywords" content="분당 셔츠룸, 분당 셔츠룸 가격, 분당 셔츠룸 예약, 정자동 셔츠룸, 서현 셔츠룸, 분당 이색 유흥" />
+                <meta property="og:title" content="분당 셔츠룸 가격 예약 | NO.1 서우실장" />
+                <meta property="og:description" content="화이트셔츠 이색 컨셉 | 프라이빗 룸 | 24시간 예약 ☎ 010-2626-4833" />
+                <meta property="og:image" content="https://bundanghipublic.com/og-shirtsroom.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="ko_KR" />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:title" content="분당 셔츠룸 | NO.1 서우실장" />
+                <meta property="twitter:description" content="화이트셔츠 이색 컨셉 | 프라이빗 룸 | 24시간 예약" />
+                <meta property="twitter:image" content="https://bundanghipublic.com/og-shirtsroom.jpg" />
+                <link rel="canonical" href="https://bundanghipublic.com/bundang-shirtsroom-guide" />
             </Helmet>
-            <SchemaJsonLd data={generateServiceSchema(
-                "Shirts Room Club",
-                "분당 셔츠룸 가격 및 시스템 안내. 비즈니스 접대에 최적화된 화이트 셔츠 컨셉.",
-                "https://bundang-entertainment.com/bundang-shirtsroom-guide"
-            )} />
+            <SchemaJsonLd data={[serviceSchema, faqSchema]} />
 
             <div className="pt-24 md:pt-32 min-h-screen bg-slate-950">
                 <div className="container mx-auto px-4 pb-12 max-w-6xl">
@@ -151,8 +194,10 @@ const ShirtsRoom = () => {
                         </p>
                     </div>
 
+                    <TableOfContents sections={sections} />
+
                     {/* 1. Definition & Concept */}
-                    <ContentBlock title="1. 셔츠룸이란?">
+                    <ContentBlock id="definition" title="1. 셔츠룸이란?">
                         <p>
                             셔츠룸은 일반적인 룸싸롱의 홀복 대신, <strong>흰색 와이셔츠</strong>만을 입은 매니저들이 서빙하는 컨셉 룸입니다.
                             초이스 후 룸 안에서 셔츠로 환복하는 퍼포먼스(인사 타임)가 시그니처이며, 핏된 셔츠 라인이 주는 시각적인 즐거움이 특징입니다.
@@ -180,7 +225,7 @@ const ShirtsRoom = () => {
                     </ContentBlock>
 
                     {/* 2. Venue Recommendation */}
-                    <div className="mb-24">
+                    <div id="recommendation" className="mb-24">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-1.5 h-8 bg-blue-500 rounded-full"></div>
                             <h2 className="text-3xl font-bold text-white">2. 분당 셔츠룸 추천 업소</h2>
@@ -191,7 +236,7 @@ const ShirtsRoom = () => {
                     </div>
 
                     {/* 3. System & Pricing */}
-                    <ContentBlock title="3. 이용 시스템 및 가격 안내">
+                    <ContentBlock id="system" title="3. 이용 시스템 및 가격 안내">
                         <p>
                             셔츠룸의 가장 큰 장점은 **'투명한 정찰제 가격'**입니다.
                             강남권보다 저렴하면서도 서비스 퀄리티는 유지하여 가성비를 중요시하는 분들께 인기가 많습니다.
@@ -236,7 +281,7 @@ const ShirtsRoom = () => {
                     </ContentBlock>
 
                     {/* 4. FAQ */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+                    <div id="faq" className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
                         <div className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800">
                             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                                 <Star className="text-blue-500" /> 서우실장의 이용 Tip
@@ -258,14 +303,12 @@ const ShirtsRoom = () => {
                                 <HelpCircle className="text-blue-500" /> 자주 묻는 질문 (FAQ)
                             </h3>
                             <div className="space-y-6">
-                                <div>
-                                    <p className="font-bold text-blue-400 mb-1">Q. 셔츠룸과 하이퍼블릭의 차이는?</p>
-                                    <p className="text-slate-300 text-sm">A. 하이퍼블릭은 외모 퀄리티가 조금 더 높고, 셔츠룸은 수위와 마인드(터치 등)가 훨씬 높습니다. 노는 분위기를 원하시면 셔츠룸이 좋습니다.</p>
-                                </div>
-                                <div>
-                                    <p className="font-bold text-blue-400 mb-1">Q. 복장은 셔츠만 입나요?</p>
-                                    <p className="text-slate-300 text-sm">A. 네, 기본적으로 흰색 와이셔츠만 착용하는 '하의실종' 컨셉입니다. 이것이 셔츠룸만의 시그니처입니다.</p>
-                                </div>
+                                {faqList.map((faq, index) => (
+                                    <div key={index}>
+                                        <p className="font-bold text-blue-400 mb-1">Q. {faq.question}</p>
+                                        <p className="text-slate-300 text-sm">A. {faq.answer}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -282,6 +325,8 @@ const ShirtsRoom = () => {
                             <Phone fill="currentColor" size={20} /> 010-2626-4833 VIP 접대 예약
                         </button>
                     </div>
+
+                    <RelatedServices />
 
                 </div>
             </div>

@@ -1,23 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import SchemaJsonLd, { generateServiceSchema } from '../components/SchemaJsonLd';
-import { Music, Clock, GlassWater, Users, Sparkles, CheckCircle, Phone, MapPin, DollarSign, Star, HelpCircle, Mic2 } from 'lucide-react';
+import SchemaJsonLd, { generateServiceSchema, generateFAQSchema } from '../components/SchemaJsonLd';
+import RelatedServices from '../components/RelatedServices';
+import TableOfContents from '../components/TableOfContents';
+import { Music, Clock, GlassWater, Users, Sparkles, CheckCircle, Phone, MapPin, DollarSign, Star, HelpCircle, Mic2, ChevronRight } from 'lucide-react';
 
 const SectionTitle = ({ title, subtitle }) => (
     <div className="text-center mb-16 relative">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-purple-500/10 rounded-full blur-2xl"></div>
-        <h3 className="text-amber-400 font-bold tracking-[0.2em] text-sm md:text-base uppercase mb-3 animate-fade-in-up">{subtitle}</h3>
+        <span className="text-amber-400 font-bold tracking-[0.2em] text-sm md:text-base uppercase mb-3 animate-fade-in-up block">{subtitle}</span>
         <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 relative z-10 animate-fade-in-up delay-100 drop-shadow-sm">{title}</h1>
         <div className="w-1 h-12 bg-gradient-to-b from-amber-500 to-transparent mx-auto mt-6"></div>
     </div>
 );
 
-const ContentBlock = ({ title, children }) => (
-    <div className="mb-12 bg-slate-900/30 p-8 rounded-2xl border border-slate-800/50 backdrop-blur-sm hover:border-purple-500/20 transition-colors">
-        <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+const ContentBlock = ({ title, children, id }) => (
+    <div id={id} className="mb-12 bg-slate-900/30 p-8 rounded-2xl border border-slate-800/50 backdrop-blur-sm hover:border-purple-500/20 transition-colors">
+        <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <div className="w-1.5 h-8 bg-purple-500 rounded-full"></div>
             {title}
-        </h3>
+        </h2>
         <div className="text-slate-300 leading-relaxed text-lg font-light space-y-4">
             {children}
         </div>
@@ -31,6 +34,9 @@ const VenueCard = ({ venue }) => (
             <img
                 src={venue.img}
                 alt={venue.imgAlt}
+                loading="lazy"
+                width="400"
+                height="256"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out"
             />
             <div className="absolute top-4 right-4 z-20 bg-gradient-to-r from-purple-600 to-purple-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase shadow-lg tracking-wider">
@@ -146,19 +152,58 @@ const venues = {
 };
 
 const Karaoke = () => {
+    const faqList = [
+        {
+            question: "노래방 기기는 최신인가요?",
+            answer: "네, 매월 신곡이 업데이트되는 최신형 기기를 사용합니다. 음향 세팅도 전문가가 주기적으로 점검합니다."
+        },
+        {
+            question: "외부 주류 반입이 가능한가요?",
+            answer: "원칙적으로는 불가합니다. 다만, 특별한 기념일 와인 등은 콜키지 비용 지불 후 반입 가능하오니 미리 상의해 주세요."
+        },
+        {
+            question: "여성 손님도 많이 오시나요?",
+            answer: "네, 생일파티나 파티룸 이용을 위해 2030 여성 고객님들도 많이 찾아주십니다. 안전하고 즐거운 분위기를 보장합니다."
+        }
+    ];
+
+    const sections = [
+        { id: "features", title: "1. 분당 가라오케 특징" },
+        { id: "recommendation", title: "2. 추천 업소 TOP 6" },
+        { id: "pricing", title: "3. 이용 가격 및 시스템" },
+        { id: "faq", title: "4. 이용 꿀팁 및 FAQ" }
+    ];
+
+    const serviceSchema = generateServiceSchema(
+        "Karaoke",
+        "분당 가라오케 추천 및 가격표. 최신 음향 시설과 대형 룸 완비.",
+        "https://bundanghipublic.com/bundang-karaoke-guide",
+        "100000"
+    );
+
+    const faqSchema = generateFAQSchema(faqList);
+
     return (
         <>
             <Helmet>
-                <title>분당 가라오케 추천 BEST & 가격표 | 24시간 예약</title>
-                <meta name="description" content="분당 가라오케 가격, 위치, 시설 완벽 가이드. 정자동, 서현동 1등 가타오케의 최신 주대 정보와 파티룸 예약안내. 음향 시설 좋은 곳을 찾으신다면 서우실장에게." />
-                <meta name="keywords" content="분당 가라오케, 분당 노래방, 분당 가라오케 가격, 분당 가라오케 예약, 분당 파티룸, 정자동 가라오케, 서현 가라오케" />
-                <link rel="canonical" href="https://bundang-entertainment.com/bundang-karaoke-guide" />
+                <title>분당 가라오케 가격 예약 | 정자·서현 NO.1 서우실장</title>
+                <meta name="description" content="분당 가라오케 TOP 6 완벽 가이드 | 정자동·서현역 고급 음향시설 | 파티룸·VIP룸 | 생일 샴페인 증정 | 단체 환영 | 24시간 예약 ☎ 010-2626-4833" />
+                <meta name="keywords" content="분당 가라오케, 분당 가라오케 가격, 분당 가라오케 예약, 정자동 가라오케, 서현 가라오케, 분당 파티룸, 분당 노래방" />
+                <meta property="og:title" content="분당 가라오케 가격 예약 | NO.1 서우실장" />
+                <meta property="og:description" content="정자·서현 TOP 6 | 고급 음향시설 | 파티룸·VIP룸 | 24시간 예약 ☎ 010-2626-4833" />
+                <meta property="og:image" content="https://bundanghipublic.com/og-karaoke.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:image:alt" content="분당 가라오케 가격 및 예약 가이드" />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="ko_KR" />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:title" content="분당 가라오케 | NO.1 서우실장" />
+                <meta property="twitter:description" content="정자·서현 TOP 6 | 고급 음향시설 | 24시간 예약" />
+                <meta property="twitter:image" content="https://bundanghipublic.com/og-karaoke.jpg" />
+                <link rel="canonical" href="https://bundanghipublic.com/bundang-karaoke-guide" />
             </Helmet>
-            <SchemaJsonLd data={generateServiceSchema(
-                "Karaoke",
-                "분당 가라오케 추천 및 가격표. 최신 음향 시설과 대형 룸 완비.",
-                "https://bundang-entertainment.com/bundang-karaoke-guide"
-            )} />
+            <SchemaJsonLd data={[serviceSchema, faqSchema]} />
 
             <div className="pt-24 md:pt-32 min-h-screen bg-slate-950">
                 <div className="container mx-auto px-4 pb-12 max-w-6xl">
@@ -173,8 +218,10 @@ const Karaoke = () => {
                         </p>
                     </div>
 
+                    <TableOfContents sections={sections} />
+
                     {/* 1. Definition */}
-                    <ContentBlock title="1. 분당 가라오케의 특징">
+                    <ContentBlock id="features" title="1. 분당 가라오케의 특징">
                         <p>
                             분당 가라오케는 단순한 노래방을 넘어선 <strong>'토탈 엔터테인먼트 공간'</strong>을 지향합니다. 강남의 고급 가라오케 시스템을 그대로 도입하여,
                             웨이터의 격식 있는 서빙과 호텔 셰프 수준의 고급 안주, 그리고 무엇보다 <strong>콘서트장을 방불케 하는 하이엔드 음향 시설</strong>을 갖추고 있습니다.
@@ -202,7 +249,7 @@ const Karaoke = () => {
                     </ContentBlock>
 
                     {/* 2. Recommendations */}
-                    <div className="mb-24">
+                    <div id="recommendation" className="mb-24">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-1.5 h-8 bg-purple-500 rounded-full"></div>
                             <h2 className="text-3xl font-bold text-white">2. 분당 가라오케 추천 TOP 6</h2>
@@ -213,7 +260,7 @@ const Karaoke = () => {
                     </div>
 
                     {/* 3. Pricing & System */}
-                    <ContentBlock title="3. 이용 가격 및 시스템 안내">
+                    <ContentBlock id="pricing" title="3. 이용 가격 및 시스템 안내">
                         <p>
                             분당 가라오케는 투명한 정찰제로 운영됩니다.
                             <strong>양주 SET</strong>가 가장 인기 있는 기본 메뉴이며, 인원수와 시간에 따라 추가 비용이 발생할 수 있습니다.
@@ -259,7 +306,7 @@ const Karaoke = () => {
                     </ContentBlock>
 
                     {/* 4. FAQ */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+                    <div id="faq" className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
                         <div className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800">
                             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                                 <Star className="text-purple-500" /> 서우실장의 가라오케 Tip
@@ -281,14 +328,17 @@ const Karaoke = () => {
                                 <HelpCircle className="text-purple-500" /> 자주 묻는 질문 (FAQ)
                             </h3>
                             <div className="space-y-6">
-                                <div>
-                                    <p className="font-bold text-purple-400 mb-1">Q. 노래방 기기는 최신인가요?</p>
-                                    <p className="text-slate-300 text-sm">A. 네, 매월 신곡이 업데이트되는 최신형 기기를 사용합니다. 음향 세팅도 전문가가 주기적으로 점검합니다.</p>
-                                </div>
-                                <div>
-                                    <p className="font-bold text-purple-400 mb-1">Q. 외부 주류 반입이 가능한가요?</p>
-                                    <p className="text-slate-300 text-sm">A. 원칙적으로는 불가합니다. 다만, 특별한 기념일 와인 등은 콜키지 비용 지불 후 반입 가능하오니 미리 상의해 주세요.</p>
-                                </div>
+                                {faqList.map((faq, index) => (
+                                    <div key={index}>
+                                        <p className="font-bold text-purple-400 mb-1">Q. {faq.question}</p>
+                                        <p className="text-slate-300 text-sm">A. {faq.answer}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="mt-6 text-center">
+                                <Link to="/bundang-karaoke-guide/faq" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 font-bold transition-colors">
+                                    더 많은 질문과 답변 보기 <ChevronRight size={18} />
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -306,8 +356,11 @@ const Karaoke = () => {
                         </button>
                     </div>
 
+
+                    <RelatedServices />
+
                 </div>
-            </div>
+            </div >
         </>
     );
 };

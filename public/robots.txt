@@ -1,4 +1,16 @@
+# Robots.txt for bundanghipublic.com
+# Generated: 2026-01-18
+
+# Allow all crawlers
 User-agent: *
 Allow: /
 
-Sitemap: https://bundang-entertainment.com/sitemap.xml
+# Sitemap location
+Sitemap: https://bundanghipublic.com/sitemap.xml
+
+# Disallow sensitive paths (none currently)
+# Disallow: /api/
+# Disallow: /admin/
+
+# Crawl delay for politeness (optional)
+# Crawl-delay: 1

@@ -1,23 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import SchemaJsonLd, { generateServiceSchema } from '../components/SchemaJsonLd';
-import { Star, Clock, GlassWater, Users, Sparkles, CheckCircle, Phone, MapPin, DollarSign, HelpCircle, Zap } from 'lucide-react';
+import SchemaJsonLd, { generateServiceSchema, generateFAQSchema } from '../components/SchemaJsonLd';
+import RelatedServices from '../components/RelatedServices';
+import TableOfContents from '../components/TableOfContents';
+import { Star, Clock, GlassWater, Users, Sparkles, CheckCircle, Phone, MapPin, DollarSign, HelpCircle, Zap, ChevronRight } from 'lucide-react';
 
 const SectionTitle = ({ title, subtitle }) => (
     <div className="text-center mb-16 relative">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-amber-500/10 rounded-full blur-2xl"></div>
-        <h3 className="text-amber-400 font-bold tracking-[0.2em] text-sm md:text-base uppercase mb-3 animate-fade-in-up">{subtitle}</h3>
+        <span className="text-amber-400 font-bold tracking-[0.2em] text-sm md:text-base uppercase mb-3 animate-fade-in-up block">{subtitle}</span>
         <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 relative z-10 animate-fade-in-up delay-100 drop-shadow-sm">{title}</h1>
         <div className="w-1 h-12 bg-gradient-to-b from-amber-500 to-transparent mx-auto mt-6"></div>
     </div>
 );
 
-const ContentBlock = ({ title, children }) => (
-    <div className="mb-12 bg-slate-900/30 p-8 rounded-2xl border border-slate-800/50 backdrop-blur-sm hover:border-amber-500/20 transition-colors">
-        <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+const ContentBlock = ({ title, children, id }) => (
+    <div id={id} className="mb-12 bg-slate-900/30 p-8 rounded-2xl border border-slate-800/50 backdrop-blur-sm hover:border-amber-500/20 transition-colors">
+        <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <div className="w-1.5 h-8 bg-amber-500 rounded-full"></div>
             {title}
-        </h3>
+        </h2>
         <div className="text-slate-300 leading-relaxed text-lg font-light space-y-4">
             {children}
         </div>
@@ -31,6 +34,9 @@ const VenueCard = ({ venue }) => (
             <img
                 src={venue.img}
                 alt={venue.imgAlt}
+                loading="lazy"
+                width="400"
+                height="256"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out"
             />
             <div className="absolute top-4 right-4 z-20 bg-gradient-to-r from-amber-600 to-amber-500 text-black text-xs font-bold px-4 py-1.5 rounded-full uppercase shadow-lg tracking-wider">
@@ -127,19 +133,58 @@ const venues = {
 };
 
 const HyperPublic = () => {
+    const faqList = [
+        {
+            question: "혼자 가도 되나요?",
+            answer: "물론입니다. 최근 1인(독고) 손님이 40% 이상입니다. 어색하지 않게 1:1로 밀착 케어해 드립니다."
+        },
+        {
+            question: "픽업 서비스가 있나요?",
+            answer: "분당 전 지역 (정자, 판교, 서현, 야탑, 미금) 고급 세단 무료 픽업 가능합니다."
+        },
+        {
+            question: "카드로 계산하면 더 비싼가요?",
+            answer: "정찰제를 원칙으로 하지만, 카드 수수료/부가세 부분은 업소마다 차이가 있을 수 있으니 예약 시 확인 부탁드립니다."
+        }
+    ];
+
+    const sections = [
+        { id: "definition", title: "1. 하이퍼블릭이란?" },
+        { id: "recommendation", title: "2. 추천 업소 TOP 2" },
+        { id: "system", title: "3. 이용 시스템 및 가이드" },
+        { id: "faq", title: "4. 이용 꿀팁 및 FAQ" }
+    ];
+
+    const serviceSchema = generateServiceSchema(
+        "HyperPublic Club",
+        "분당 하이퍼블릭 예약 및 가격 안내. 24시간 픽업 서비스 및 최신 시설 완비.",
+        "https://bundanghipublic.com/bundang-hyperpub-guide",
+        "130000"
+    );
+
+    const faqSchema = generateFAQSchema(faqList);
+
     return (
         <>
             <Helmet>
-                <title>분당 하이퍼블릭 가격, 시스템, 위치 정보. 정자동, 서현, 판교, 야탑 등 분당 전 지역 픽업 가능한 1등 업소 리스트와 주대 정보를 확인하세요.</title>
-                <meta name="description" content="분당 하이퍼블릭 가격, 시스템, 위치 정보. 정자동, 서현, 판교, 야탑 등 분당 전 지역 픽업 가능한 1등 업소 리스트와 주대 정보를 확인하세요." />
-                <meta name="keywords" content="분당 하이퍼블릭, 분당 하이퍼블릭 추천, 분당 하퍼, 정자동 하이퍼블릭, 서현역 하이퍼블릭, 분당 룸싸롱, 분당 유흥" />
-                <link rel="canonical" href="https://bundang-entertainment.com/bundang-hyperpub-guide" />
+                <title>분당 하이퍼블릭 가격 예약 | 정자·서현·판교 NO.1 서우실장</title>
+                <meta name="description" content="분당 하이퍼블릭 TOP 4 완벽 가이드 | 정자동·서현역·판교 지역별 가격표 | 무한초이스·매직미러 | 100% 정찰제 | 최상급 매니저 대기 | 24시간 예약 ☎ 010-2626-4833" />
+                <meta name="keywords" content="분당 하이퍼블릭, 분당 하이퍼블릭 가격, 분당 하이퍼블릭 예약, 정자동 하이퍼블릭, 서현 하이퍼블릭, 판교 하이퍼블릭, 분당 룸살롱, 분당 유흥" />
+                <meta property="og:title" content="분당 하이퍼블릭 가격 예약 | NO.1 서우실장" />
+                <meta property="og:description" content="정자·서현·판교 TOP 4 | 무한초이스 | 100% 정찰제 | 24시간 예약 ☎ 010-2626-4833" />
+                <meta property="og:image" content="https://bundanghipublic.com/og-hyperpub.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:image:alt" content="분당 하이퍼블릭 가격 및 예약 가이드" />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="ko_KR" />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:title" content="분당 하이퍼블릭 | NO.1 서우실장" />
+                <meta property="twitter:description" content="정자·서현·판교 TOP 4 | 무한초이스 | 100% 정찰제" />
+                <meta property="twitter:image" content="https://bundanghipublic.com/og-hyperpub.jpg" />
+                <link rel="canonical" href="https://bundanghipublic.com/bundang-hyperpub-guide" />
             </Helmet>
-            <SchemaJsonLd data={generateServiceSchema(
-                "HyperPublic Club",
-                "분당 하이퍼블릭 예약 및 가격 안내. 24시간 픽업 서비스 및 최신 시설 완비.",
-                "https://bundang-entertainment.com/bundang-hyperpub-guide"
-            )} />
+            <SchemaJsonLd data={[serviceSchema, faqSchema]} />
 
             <div className="pt-24 md:pt-32 min-h-screen bg-slate-950">
                 <div className="container mx-auto px-4 pb-12 max-w-6xl">
@@ -154,8 +199,10 @@ const HyperPublic = () => {
                         </p>
                     </div>
 
+                    <TableOfContents sections={sections} />
+
                     {/* 1. Definition & Features */}
-                    <ContentBlock title="1. 하이퍼블릭이란? (Definition)">
+                    <ContentBlock id="definition" title="1. 하이퍼블릭이란? (Definition)">
                         <p>
                             <strong>하이퍼블릭(Hyper-Public)</strong>은 기존 퍼블릭(Public) 업소의 합리적인 가격 시스템은 유지하되,
                             <strong> '하이엔드(High-End)'급 퀄리티</strong>를 접목시킨 새로운 트렌드의 룸입니다.
@@ -181,7 +228,7 @@ const HyperPublic = () => {
                     </ContentBlock>
 
                     {/* 2. Venue Recommendations */}
-                    <div className="mb-24">
+                    <div id="recommendation" className="mb-24">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-1.5 h-8 bg-amber-500 rounded-full"></div>
                             <h2 className="text-3xl font-bold text-white">2. 분당 하이퍼블릭 추천 TOP 2</h2>
@@ -193,7 +240,7 @@ const HyperPublic = () => {
                     </div>
 
                     {/* 3. System Guide */}
-                    <ContentBlock title="3. 이용 시스템 및 가이드">
+                    <ContentBlock id="system" title="3. 이용 시스템 및 가이드">
                         <p>
                             분당 하이퍼블릭을 처음 방문하시나요? 투명한 이용을 위해 기본적인 시스템을 안내해 드립니다. 대부분의 업소가 비슷한 룰을 따르고 있으나, <strong>서우실장</strong>을 통해 예약하시면 더욱 특별한 혜택을 받으실 수 있습니다.
                         </p>
@@ -244,7 +291,7 @@ const HyperPublic = () => {
                     </ContentBlock>
 
                     {/* 4. Tips & FAQ */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+                    <div id="faq" className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
                         <div className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800">
                             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                                 <Star className="text-amber-500" /> 서우실장의 이용 꿀팁
@@ -261,18 +308,18 @@ const HyperPublic = () => {
                                 <HelpCircle className="text-amber-500" /> 자주 묻는 질문 (FAQ)
                             </h3>
                             <div className="space-y-6">
-                                <div>
-                                    <p className="font-bold text-amber-400 mb-1">Q. 혼자 가도 되나요?</p>
-                                    <p className="text-slate-300 text-sm">A. 물론입니다. 최근 1인(독고) 손님이 40% 이상입니다. 어색하지 않게 1:1로 밀착 케어해 드립니다.</p>
-                                </div>
-                                <div>
-                                    <p className="font-bold text-amber-400 mb-1">Q. 픽업 서비스가 있나요?</p>
-                                    <p className="text-slate-300 text-sm">A. 분당 전 지역 (정자, 판교, 서현, 야탑, 미금) 고급 세단 무료 픽업 가능합니다.</p>
-                                </div>
-                                <div>
-                                    <p className="font-bold text-amber-400 mb-1">Q. 카드로 계산하면 더 비싼가요?</p>
-                                    <p className="text-slate-300 text-sm">A. 정찰제를 원칙으로 하지만, 카드 수수료/부가세 부분은 업소마다 차이가 있을 수 있으니 예약 시 확인 부탁드립니다.</p>
-                                </div>
+                                {faqList.map((faq, index) => (
+                                    <div key={index}>
+                                        <p className="font-bold text-amber-400 mb-1">Q. {faq.question}</p>
+                                        <p className="text-slate-300 text-sm">A. {faq.answer}</p>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="mt-6 text-center">
+                                <Link to="/bundang-hyperpub-guide/faq" className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-400 font-bold transition-colors">
+                                    더 많은 질문과 답변 보기 <ChevronRight size={18} />
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -290,8 +337,10 @@ const HyperPublic = () => {
                         </button>
                     </div>
 
+                    <RelatedServices />
+
                 </div>
-            </div>
+            </div >
         </>
     );
 };

@@ -1,23 +1,25 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import SchemaJsonLd, { generateServiceSchema } from '../components/SchemaJsonLd';
+import SchemaJsonLd, { generateServiceSchema, generateFAQSchema } from '../components/SchemaJsonLd';
+import RelatedServices from '../components/RelatedServices';
+import TableOfContents from '../components/TableOfContents';
 import { Star, Clock, GlassWater, Users, Sparkles, CheckCircle, Phone, MapPin, DollarSign, HelpCircle, Heart, Gift } from 'lucide-react';
 
 const SectionTitle = ({ title, subtitle }) => (
     <div className="text-center mb-16 relative">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-rose-500/10 rounded-full blur-2xl"></div>
-        <h3 className="text-amber-400 font-bold tracking-[0.2em] text-sm md:text-base uppercase mb-3 animate-fade-in-up">{subtitle}</h3>
+        <span className="text-amber-400 font-bold tracking-[0.2em] text-sm md:text-base uppercase mb-3 animate-fade-in-up block">{subtitle}</span>
         <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-rose-100 to-rose-300 relative z-10 animate-fade-in-up delay-100 drop-shadow-sm">{title}</h1>
         <div className="w-1 h-12 bg-gradient-to-b from-rose-500 to-transparent mx-auto mt-6"></div>
     </div>
 );
 
-const ContentBlock = ({ title, children }) => (
-    <div className="mb-12 bg-slate-900/30 p-8 rounded-2xl border border-slate-800/50 backdrop-blur-sm hover:border-rose-500/20 transition-colors">
-        <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+const ContentBlock = ({ title, children, id }) => (
+    <div id={id} className="mb-12 bg-slate-900/30 p-8 rounded-2xl border border-slate-800/50 backdrop-blur-sm hover:border-rose-500/20 transition-colors">
+        <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <div className="w-1.5 h-8 bg-rose-500 rounded-full"></div>
             {title}
-        </h3>
+        </h2>
         <div className="text-slate-300 leading-relaxed text-lg font-light space-y-4">
             {children}
         </div>
@@ -31,6 +33,9 @@ const VenueCard = ({ venue }) => (
             <img
                 src={venue.img}
                 alt={venue.imgAlt}
+                loading="lazy"
+                width="400"
+                height="256"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out"
             />
             <div className="absolute top-4 right-4 z-20 bg-gradient-to-r from-rose-600 to-rose-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase shadow-lg tracking-wider">
@@ -124,19 +129,57 @@ const venues = {
 };
 
 const Hostbar = () => {
+    const faqList = [
+        {
+            question: "2차(애프터)가 가능한가요?",
+            answer: "선수 개인의 의사와 합의에 따라 결정되는 부분이며, 가게 공식적으로는 강요하거나 관여하지 않습니다."
+        },
+        {
+            question: "혼자 가도 민망하지 않을까요?",
+            answer: "절대 그렇지 않습니다. 오히려 혼자 오셔서 선수와 깊은 대화를 나누며 힐링하고 가시는 단골 고객님들이 많습니다."
+        },
+        {
+            question: "선수들 사이즈는 어떤가요?",
+            answer: "강남 정빠 출신부터 아이돌 연습생, 모델 출신 등 분당 최고 수질을 자부합니다. 취향에 맞춰 초이스 하실 수 있습니다."
+        }
+    ];
+
+    const sections = [
+        { id: "definition", title: "1. 분당 호빠 시스템" },
+        { id: "recommendation", title: "2. 추천 업소" },
+        { id: "system", title: "3. 이용 시스템 및 가이드" },
+        { id: "faq", title: "4. 이용 꿀팁 및 FAQ" }
+    ];
+
+    const serviceSchema = generateServiceSchema(
+        "Host Bar",
+        "분당 호스트바 추천 및 가격. 여성 전용 프라이빗 룸 및 픽업 서비스.",
+        "https://bundanghipublic.com/bundang-hostbar-guide",
+        "150000"
+    );
+
+    const faqSchema = generateFAQSchema(faqList);
+
     return (
         <>
             <Helmet>
-                <title>분당 호빠 추천 & 가격 | 여성전용 프라이빗</title>
-                <meta name="description" content="분당 호빠, 호스트바 가격 및 선수 프로필 안내. 정빠, 아빠방, 제비방 등 취향별 업소 추천. 서현, 정자, 야탑 전 지역 픽업 서비스 제공합니다." />
-                <meta name="keywords" content="분당 호빠, 분당 호스트바, 분당 정빠, 분당 아빠방, 분당 여성전용, 성남 호빠, 분당 선수" />
-                <link rel="canonical" href="https://bundang-entertainment.com/bundang-hostbar-guide" />
+                <title>분당 호빠 가격 예약 | 여성전용 NO.1 서우실장</title>
+                <meta name="description" content="분당 호빠(호스트바) 완벽 가이드 | 여성 전용 프리미엄 클럽 | 모델급 선수 무한 초이스 | 정자·서현·판교 전 지역 픽업 | 비밀 보장 | 24시간 예약 ☎ 010-2626-4833" />
+                <meta name="keywords" content="분당 호빠, 분당 호스트바, 분당 호빠 가격, 분당 호빠 예약, 여성전용 클럽, 분당 정빠" />
+                <meta property="og:title" content="분당 호빠 가격 예약 | NO.1 서우실장" />
+                <meta property="og:description" content="여성 전용 프리미엄 클럽 | 모델급 선수 무한 초이스 | 24시간 예약 ☎ 010-2626-4833" />
+                <meta property="og:image" content="https://bundanghipublic.com/og-hostbar.jpg" />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="ko_KR" />
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:title" content="분당 호빠 | NO.1 서우실장" />
+                <meta property="twitter:description" content="여성 전용 클럽 | 모델급 선수 | 비밀 보장 | 24시간 예약" />
+                <meta property="twitter:image" content="https://bundanghipublic.com/og-hostbar.jpg" />
+                <link rel="canonical" href="https://bundanghipublic.com/bundang-hostbar-guide" />
             </Helmet>
-            <SchemaJsonLd data={generateServiceSchema(
-                "Host Bar",
-                "분당 호스트바 추천 및 가격. 여성 전용 프라이빗 룸 및 픽업 서비스.",
-                "https://bundang-entertainment.com/bundang-hostbar-guide"
-            )} />
+            <SchemaJsonLd data={[serviceSchema, faqSchema]} />
 
             <div className="pt-24 md:pt-32 min-h-screen bg-slate-950">
                 <div className="container mx-auto px-4 pb-12 max-w-6xl">
@@ -151,8 +194,10 @@ const Hostbar = () => {
                         </p>
                     </div>
 
+                    <TableOfContents sections={sections} />
+
                     {/* 1. Definition */}
-                    <ContentBlock title="1. 분당 호빠 시스템">
+                    <ContentBlock id="definition" title="1. 분당 호빠 시스템">
                         <p>
                             분당 호스트바는 오직 여성 고객님들만을 위한 프라이빗 유흥 공간입니다.
                             서울 강남의 '정빠', '퍼블릭' 퀄리티를 유지하면서도 주대는 훨씬 합리적인 것이 장점입니다.
@@ -165,7 +210,7 @@ const Hostbar = () => {
                     </ContentBlock>
 
                     {/* 2. Venue Recommendation */}
-                    <div className="mb-24">
+                    <div id="recommendation" className="mb-24">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-1.5 h-8 bg-rose-500 rounded-full"></div>
                             <h2 className="text-3xl font-bold text-white">2. 분당 호빠 추천 업소</h2>
@@ -176,7 +221,7 @@ const Hostbar = () => {
                     </div>
 
                     {/* 3. System Guide */}
-                    <ContentBlock title="3. 이용 시스템 및 초이스 가이드">
+                    <ContentBlock id="system" title="3. 이용 시스템 및 초이스 가이드">
                         <h4 className="text-xl font-bold text-white mb-4">A. 초이스 (Choice)</h4>
                         <p className="mb-4">
                             룸에 입장하시면 담당 실장이 5~10조의 선수들을 차례로 보여드립니다.
@@ -193,7 +238,7 @@ const Hostbar = () => {
                     </ContentBlock>
 
                     {/* 4. FAQ */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+                    <div id="faq" className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
                         <div className="bg-slate-900/50 p-8 rounded-2xl border border-slate-800">
                             <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
                                 <Gift className="text-rose-500" /> 특별한 날을 위한 팁
@@ -215,14 +260,12 @@ const Hostbar = () => {
                                 <HelpCircle className="text-rose-500" /> 자주 묻는 질문 (FAQ)
                             </h3>
                             <div className="space-y-6">
-                                <div>
-                                    <p className="font-bold text-rose-400 mb-1">Q. 2차(애프터)가 가능한가요?</p>
-                                    <p className="text-slate-300 text-sm">A. 선수 개인의 의사와 합의에 따라 결정되는 부분이며, 가게 공식적으로는 강요하거나 관여하지 않습니다.</p>
-                                </div>
-                                <div>
-                                    <p className="font-bold text-rose-400 mb-1">Q. 혼자 가도 민망하지 않을까요?</p>
-                                    <p className="text-slate-300 text-sm">A. 절대 그렇지 않습니다. 오히려 혼자 오셔서 선수와 깊은 대화를 나누며 힐링하고 가시는 단골 고객님들이 많습니다.</p>
-                                </div>
+                                {faqList.map((faq, index) => (
+                                    <div key={index}>
+                                        <p className="font-bold text-rose-400 mb-1">Q. {faq.question}</p>
+                                        <p className="text-slate-300 text-sm">A. {faq.answer}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -239,6 +282,8 @@ const Hostbar = () => {
                             <Phone fill="currentColor" size={20} /> 010-2626-4833 비밀 예약
                         </button>
                     </div>
+
+                    <RelatedServices />
 
                 </div>
             </div>
