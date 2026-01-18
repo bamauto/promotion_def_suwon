@@ -7,22 +7,22 @@ const PriceGuide = () => {
     return (
         <>
             <Helmet>
-                <title>분당 유흥 가격비교 2026 | 하이퍼블릭·룸살롱·가라오케 주대표</title>
-                <meta name="description" content="분당 유흥업소 가격 완전 정복 | 하이퍼블릭 13만원~ | 셔츠룸·룸살롱·가라오케 주대 비교 | 100% 정찰제 가격표 공개 | 바가지 ZERO | ☎ 010-2626-4833" />
-                <meta name="keywords" content="분당 유흥 가격, 분당 룸살롱 가격, 하이퍼블릭 주대, 가라오케 비용, 셔츠룸 시스템 가격, 분당 TC 가격" />
-                <meta property="og:title" content="분당 유흥 가격비교 2026 | 정찰제 가격표 공개" />
+                <title>수원 유흥 가격비교 2026 | 하이퍼블릭·룸살롱·가라오케 주대표</title>
+                <meta name="description" content="수원 유흥업소 가격 완전 정복 | 하이퍼블릭 18만원~ | 셔츠룸·룸살롱·가라오케 주대 비교 | 100% 정찰제 가격표 공개 | 바가지 ZERO | ☎ 010-2626-4833" />
+                <meta name="keywords" content="수원 유흥 가격, 수원 룸살롱 가격, 하이퍼블릭 주대, 가라오케 비용, 셔츠룸 시스템 가격, 수원 TC 가격" />
+                <meta property="og:title" content="수원 유흥 가격비교 2026 | 정찰제 가격표 공개" />
                 <meta property="og:description" content="하이퍼블릭·룸살롱·가라오케 주대 비교 | 바가지 ZERO | 100% 정찰제" />
-                <meta property="og:image" content="https://bundanghipublic.com/og-price.jpg" />
+                <meta property="og:image" content="https://suwon.vip/og-price.jpg" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
-                <meta property="og:image:alt" content="분당 유흥 가격 비교표" />
+                <meta property="og:image:alt" content="수원 유흥 가격 비교표" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="ko_KR" />
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:title" content="분당 유흥 가격비교 | 정찰제 가격표" />
+                <meta property="twitter:title" content="수원 유흥 가격비교 | 정찰제 가격표" />
                 <meta property="twitter:description" content="하이퍼블릭·룸살롱·가라오케 주대 비교 | 바가지 ZERO" />
-                <meta property="twitter:image" content="https://bundanghipublic.com/og-price.jpg" />
-                <link rel="canonical" href="https://bundanghipublic.com/bundang-entertainment-price-guide" />
+                <meta property="twitter:image" content="https://suwon.vip/og-price.jpg" />
+                <link rel="canonical" href="https://suwon.vip/suwon-entertainment-price-guide" />
             </Helmet>
 
             <div className="pt-24 md:pt-32 min-h-screen bg-slate-950 px-4 pb-20">
@@ -31,7 +31,7 @@ const PriceGuide = () => {
                     {/* Header */}
                     <div className="text-center mb-16">
                         <h1 className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-500 mb-6">
-                            2026 분당 유흥 가격 가이드
+                            2026 수원 유흥 가격 가이드
                         </h1>
                         <p className="text-slate-400 text-lg leading-relaxed max-w-3xl mx-auto">
                             업소 갈 때마다 "혹시 바가지 쓰는 거 아닐까?" 걱정하셨나요?<br />
@@ -54,41 +54,41 @@ const PriceGuide = () => {
                                 <tbody className="text-slate-300 divide-y divide-slate-800">
                                     <tr className="hover:bg-slate-800/30 transition-colors">
                                         <td className="py-4 px-6 font-bold text-amber-400">
-                                            <Link to="/bundang-hyperpub-guide" className="hover:underline">하이퍼블릭</Link>
+                                            <Link to="/suwon-highpub-guide" className="hover:underline">하이퍼블릭</Link>
                                         </td>
-                                        <td className="py-4 px-6">13~16만원</td>
-                                        <td className="py-4 px-6">13만원 (80분)</td>
+                                        <td className="py-4 px-6">18~22만원</td>
+                                        <td className="py-4 px-6">18만원 (80분)</td>
                                         <td className="py-4 px-6 text-sm">가성비 甲. 합리적인 가격에 고퀄리티 외모. 2030 선호도 1위.</td>
                                     </tr>
                                     <tr className="hover:bg-slate-800/30 transition-colors">
                                         <td className="py-4 px-6 font-bold text-blue-400">
-                                            <Link to="/bundang-shirtsroom-guide" className="hover:underline">셔츠룸</Link>
+                                            <Link to="/suwon-shirtsroom-guide" className="hover:underline">셔츠룸</Link>
                                         </td>
-                                        <td className="py-4 px-6">15만원 내외</td>
-                                        <td className="py-4 px-6">14~15만원 (60분)</td>
+                                        <td className="py-4 px-6">18만원 내외</td>
+                                        <td className="py-4 px-6">18~20만원 (60분)</td>
                                         <td className="py-4 px-6 text-sm">인사 타임 퍼포먼스. 화끈한 분위기를 원할 때 추천.</td>
                                     </tr>
                                     <tr className="hover:bg-slate-800/30 transition-colors">
                                         <td className="py-4 px-6 font-bold text-purple-400">
-                                            <Link to="/bundang-karaoke-guide" className="hover:underline">가라오케</Link>
+                                            <Link to="/suwon-karaoke-guide" className="hover:underline">가라오케</Link>
                                         </td>
-                                        <td className="py-4 px-6">10~15만원</td>
-                                        <td className="py-4 px-6">13만원 (60분)</td>
+                                        <td className="py-4 px-6">18~20만원</td>
+                                        <td className="py-4 px-6">18만원 (60분)</td>
                                         <td className="py-4 px-6 text-sm">노래와 파티 위주. 남녀 동반 모임이나 회식에 최적.</td>
                                     </tr>
                                     <tr className="hover:bg-slate-800/30 transition-colors">
                                         <td className="py-4 px-6 font-bold text-amber-600">
-                                            <Link to="/bundang-room-salon-guide" className="hover:underline">정통 룸살롱</Link>
+                                            <Link to="/suwon-room-salon-guide" className="hover:underline">정통 룸살롱</Link>
                                         </td>
                                         <td className="py-4 px-6">20만원~</td>
-                                        <td className="py-4 px-6">15만원~</td>
+                                        <td className="py-4 px-6">18만원~</td>
                                         <td className="py-4 px-6 text-sm">최상급 접대 장소. 높은 가격만큼 확실한 서비스와 마인드 보장.</td>
                                     </tr>
                                     <tr className="hover:bg-slate-800/30 transition-colors">
                                         <td className="py-4 px-6 font-bold text-rose-500">
-                                            <Link to="/bundang-hostbar-guide" className="hover:underline">호스트바 (호빠)</Link>
+                                            <Link to="/suwon-hostbar-guide" className="hover:underline">호스트바 (호빠)</Link>
                                         </td>
-                                        <td className="py-4 px-6">15만원~</td>
+                                        <td className="py-4 px-6">18만원~</td>
                                         <td className="py-4 px-6">5~6만원 (시간당)</td>
                                         <td className="py-4 px-6 text-sm">여성 전용. 시간당 TC 계산으로 오래 놀수록 비용 상승.</td>
                                     </tr>

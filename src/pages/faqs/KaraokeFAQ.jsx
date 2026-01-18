@@ -29,7 +29,7 @@ const KaraokeFAQ = () => {
         },
         {
             question: "아가씨(도우미) 시스템은 어떻게 되나요?",
-            answer: "분당 가라오케는 1종 유흥업소가 아닌 곳도 있어 업소마다 다릅니다. 하지만 서우실장이 안내하는 제휴 업소들은 정식 허가를 받아 합법적으로 매니저(TC) 호출이 가능합니다. 퍼블릭급 수질의 매니저들을 초이스하실 수 있습니다."
+            answer: "수원 가라오케는 1종 유흥업소가 아닌 곳도 있어 업소마다 다릅니다. 하지만 서우실장이 안내하는 제휴 업소들은 정식 허가를 받아 합법적으로 매니저(TC) 호출이 가능합니다. 퍼블릭급 수질의 매니저들을 초이스하실 수 있습니다."
         },
         {
             question: "생일 파티나 모임 시 혜택이 있나요?",
@@ -49,7 +49,7 @@ const KaraokeFAQ = () => {
         },
         {
             question: "가격은 대략 어느 정도인가요?",
-            answer: "양주 1병 세트(12년산 기준) 10만원 중반대부터 시작합니다. 인원수가 많아도 술 추가가 없다면 룸비(TC)만 추가되므로 단체 회식 시 가성비가 매우 훌륭합니다."
+            answer: "양주 1병 세트(12년산 기준) 18만원대부터 시작합니다. 인원수가 많아도 술 추가가 없다면 룸비(TC)만 추가되므로 단체 회식 시 가성비가 매우 훌륭합니다."
         },
         {
             question: "혼자 가서 노래만 불러도 되나요?",
@@ -66,10 +66,10 @@ const KaraokeFAQ = () => {
     return (
         <>
             <Helmet>
-                <title>분당 가라오케 이용 팁 & FAQ | 가격, 파티, 여성 이용 안내</title>
-                <meta name="description" content="분당 가라오케 이용에 대한 모든 궁금증 해결! 가격, 안주, 생일 파티 혜택, 여성 고객 우대, 혼술 가능 여부까지 상세하게 안내해 드립니다." />
-                <meta name="keywords" content="분당 가라오케 가격, 분당 가라오케 파티, 분당 가라오케 혼술, 분당 가라오케 여성전용" />
-                <link rel="canonical" href="https://bundanghipublic.com/bundang-karaoke-guide/faq" />
+                <title>수원 가라오케 이용 팁 & FAQ | 가격, 파티, 여성 이용 안내</title>
+                <meta name="description" content="수원 가라오케 이용에 대한 모든 궁금증 해결! 가격, 안주, 생일 파티 혜택, 여성 고객 우대, 혼술 가능 여부까지 상세하게 안내해 드립니다." />
+                <meta name="keywords" content="수원 가라오케 가격, 수원 가라오케 파티, 수원 가라오케 혼술, 수원 가라오케 여성전용" />
+                <link rel="canonical" href="https://suwon.vip/suwon-karaoke-guide/faq" />
             </Helmet>
             <SchemaJsonLd data={faqSchema} />
 
@@ -83,7 +83,7 @@ const KaraokeFAQ = () => {
                             가라오케 A to Z (FAQ)
                         </h1>
                         <p className="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
-                            노래, 술, 파티가 있는 곳. <strong className="text-white">분당 가라오케</strong>를 200% 즐기는 방법을 알려드립니다.
+                            노래, 술, 파티가 있는 곳. <strong className="text-white">수원 가라오케</strong>를 200% 즐기는 방법을 알려드립니다.
                         </p>
                     </div>
 
@@ -98,7 +98,7 @@ const KaraokeFAQ = () => {
                             <button onClick={() => window.location.href = 'tel:01026264833'} className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-purple-500/25">
                                 <Phone size={20} /> 실시간 예약 문의
                             </button>
-                            <Link to="/bundang-karaoke-guide" className="bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 transition-all">
+                            <Link to="/suwon-karaoke-guide" className="bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 transition-all">
                                 <ChevronRight size={20} /> 가라오케 메인으로
                             </Link>
                         </div>

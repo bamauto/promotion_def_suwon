@@ -78,75 +78,32 @@ const VenueCard = ({ venue }) => (
     </article>
 );
 
-import karaokeLogo from '../assets/karaoke_logo.png';
+import venueImg1 from '../assets/venue-img-5.webp';
+import venueImg2 from '../assets/venue-img-11.webp';
 
 const venues = {
     karaoke: [
         {
             id: 'k-1',
-            name: '분당 가라오케 A점',
+            name: '수원 프리미엄 가라오케',
             type: 'Mega Party Room',
-            location: '분당 서현역 5번 출구',
-            price: '기본가 100,000원 ~',
-            desc: '서현역의 랜드마크. 최대 30명 수용 가능한 대형 파티룸을 완비하여 피로연이나 동호회 모임에 제격입니다. 최신 사이키 조명과 클럽 사운드 시스템으로 열광적인 분위기를 연출합니다.',
+            location: '수원 영통역 5번 출구',
+            price: '기본가 180,000원 ~',
+            desc: '영통역의 랜드마크. 최대 30명 수용 가능한 대형 파티룸을 완비하여 피로연이나 동호회 모임에 제격입니다. 최신 사이키 조명과 클럽 사운드 시스템으로 열광적인 분위기를 연출합니다.',
             features: ['30인 대형룸', '클럽 조명', 'DJ 섭외 가능', '24시간 운영'],
-            img: karaokeLogo,
-            imgAlt: '분당 가라오케 A점 로고'
+            img: venueImg1,
+            imgAlt: '수원 프리미엄 가라오케 인테리어'
         },
         {
             id: 'k-2',
-            name: '분당 가라오케 B점',
+            name: '인계동 럭셔리 가라오케',
             type: 'Luxury Lounge',
-            location: '분당 정자동 카페거리',
-            price: '기본가 150,000원 ~',
+            location: '수원 인계동 카페거리',
+            price: '기본가 200,000원 ~',
             desc: '고급스러운 라운지 바 분위기의 가라오케. 조용한 대화와 품격 있는 음주가무를 원하시는 분들께 추천합니다. 호텔 출신 셰프의 고품격 안주를 즐기실 수 있습니다.',
             features: ['호텔급 인테리어', '고급 안주', '발렛 파킹', '프라이빗'],
-            img: karaokeLogo,
-            imgAlt: '분당 가라오케 B점 로고'
-        },
-        {
-            id: 'k-3',
-            name: '분당 가라오케 C점',
-            type: 'Budget Friendly',
-            location: '분당 야탑역 먹자골목',
-            price: '기본가 80,000원 ~',
-            desc: '가성비 최고의 실속형 가라오케. 대학생이나 사회 초년생들도 부담 없이 즐길 수 있는 합리적인 가격대와 캐주얼한 분위기를 자랑합니다.',
-            features: ['가성비 갑', '서비스 안주', '생일 혜택', '단체 환영'],
-            img: karaokeLogo,
-            imgAlt: '분당 가라오케 C점 로고'
-        },
-        {
-            id: 'k-4',
-            name: '분당 가라오케 D점',
-            type: 'VIP Business',
-            location: '분당 미금역',
-            price: '비즈니스 특별가',
-            desc: '성공적인 비즈니스를 위한 격식 있는 공간. 바이어 접대나 중요한 미팅 후 뒷풀이 장소로 최적입니다. 고급스러운 인테리어와 최상의 보안을 약속드립니다.',
-            features: ['법인 결제 환영', '세금계산서 발행', '발렛 파킹', 'VIP 의전'],
-            img: karaokeLogo,
-            imgAlt: '분당 가라오케 D점 로고'
-        },
-        {
-            id: 'k-5',
-            name: '분당 가라오케 E점',
-            type: 'Secret Bunker',
-            location: '판교역 인근',
-            price: '회원제 운영',
-            desc: '아는 사람만 아는 시크릿 벙커 컨셉. 외부 간판 없이 운영되며, 완벽한 보안과 프라이버시를 보장합니다. 연예인이나 유명 인사들도 즐겨 찾는 곳입니다.',
-            features: ['비밀 통로', '보안 철저', 'VIP 케어', '예약제'],
-            img: karaokeLogo,
-            imgAlt: '분당 가라오케 E점 로고'
-        },
-        {
-            id: 'k-6',
-            name: '분당 가라오케 F점',
-            type: 'Business Club',
-            location: '분당 수내역',
-            price: '비즈니스 SET',
-            desc: '성공적인 비즈니스를 위한 최적의 파트너. 접대에 필요한 모든 것이 준비되어 있습니다. 고급 양주 세트와 깔끔한 진행으로 귀하의 비즈니스 품격을 높여드립니다.',
-            features: ['법인 카드', '세금 계산서', '접대 전문', '대리 운전'],
-            img: karaokeLogo,
-            imgAlt: '분당 가라오케 F점 로고'
+            img: venueImg2,
+            imgAlt: '인계동 럭셔리 가라오케 인테리어'
         }
     ]
 };
@@ -154,21 +111,21 @@ const venues = {
 const Karaoke = () => {
     const faqList = [
         {
-            question: "노래방 기기는 최신인가요?",
-            answer: "네, 매월 신곡이 업데이트되는 최신형 기기를 사용합니다. 음향 세팅도 전문가가 주기적으로 점검합니다."
+            question: "수원 가라오케의 음향 시설 수준은 어느 정도인가요?",
+            answer: "대부분 월간 신곡 업데이트 시스템을 갖추고 있습니다. 다만 업소마다 음향 기술자 배치 빈도가 다르니, 예약 시 점검 주기를 확인하는 것이 좋습니다. 고급형(15만 이상)은 월 2회 이상, 중급형은 월 1회 정도 점검이 일반적입니다."
         },
         {
-            question: "외부 주류 반입이 가능한가요?",
-            answer: "원칙적으로는 불가합니다. 다만, 특별한 기념일 와인 등은 콜키지 비용 지불 후 반입 가능하오니 미리 상의해 주세요."
+            question: "외부 음료 반입 규정은 어떻게 되나요?",
+            answer: "업소마다 정책이 다릅니다. 주류는 대부분 반입 불가이며, 고가 와인은 콜키지 비용(5~10만원)을 지불하면 반입 가능한 곳도 있습니다. 생일 케이크 등 음식은 일반적으로 허용됩니다. 정확한 규정은 사전에 확인하세요."
         },
         {
-            question: "여성 손님도 많이 오시나요?",
-            answer: "네, 생일파티나 파티룸 이용을 위해 2030 여성 고객님들도 많이 찾아주십니다. 안전하고 즐거운 분위기를 보장합니다."
+            question: "여성 그룹이나 혼성 그룹도 이용 가능한가요?",
+            answer: "물론입니다. 생일파티, 동창 모임 등으로 2030 여성 그룹이나 혼성 그룹도 많이 이용합니다. 안전하고 편안한 분위기의 업소를 선택하면 됩니다. 예약 시 그룹 구성을 말씀해 주시면 적합한 곳을 추천받을 수 있습니다."
         }
     ];
 
     const sections = [
-        { id: "features", title: "1. 분당 가라오케 특징" },
+        { id: "features", title: "1. 수원 가라오케 특징" },
         { id: "recommendation", title: "2. 추천 업소 TOP 6" },
         { id: "pricing", title: "3. 이용 가격 및 시스템" },
         { id: "faq", title: "4. 이용 꿀팁 및 FAQ" }
@@ -176,8 +133,8 @@ const Karaoke = () => {
 
     const serviceSchema = generateServiceSchema(
         "Karaoke",
-        "분당 가라오케 추천 및 가격표. 최신 음향 시설과 대형 룸 완비.",
-        "https://bundanghipublic.com/bundang-karaoke-guide",
+        "수원 가라오케 추천 및 가격표. 최신 음향 시설과 대형 룸 완비.",
+        "https://suwon.vip/suwon-karaoke-guide",
         "100000"
     );
 
@@ -186,44 +143,44 @@ const Karaoke = () => {
     return (
         <>
             <Helmet>
-                <title>분당 가라오케 가격 예약 | 정자·서현 NO.1 서우실장</title>
-                <meta name="description" content="분당 가라오케 TOP 6 완벽 가이드 | 정자동·서현역 고급 음향시설 | 파티룸·VIP룸 | 생일 샴페인 증정 | 단체 환영 | 24시간 예약 ☎ 010-2626-4833" />
-                <meta name="keywords" content="분당 가라오케, 분당 가라오케 가격, 분당 가라오케 예약, 정자동 가라오케, 서현 가라오케, 분당 파티룸, 분당 노래방" />
-                <meta property="og:title" content="분당 가라오케 가격 예약 | NO.1 서우실장" />
-                <meta property="og:description" content="정자·서현 TOP 6 | 고급 음향시설 | 파티룸·VIP룸 | 24시간 예약 ☎ 010-2626-4833" />
-                <meta property="og:image" content="https://bundanghipublic.com/og-karaoke.jpg" />
+                <title>수원 가라오케 장소 선택 기준 | 파티·모임·회식별 추천 가이드</title>
+                <meta name="description" content="수원 프리미엄 가라오케 장소 추천 TOP 6 | 회식·생일파티·소규모 데이트·대형 단체 행사별 선택 기준 | 음향 시설·분위기·가격대 비교분석 | 초보자를 위한 기본 예절 및 팁" />
+                <meta name="keywords" content="수원 가라오케 비교, 가라오케 선택 가이드, 인계동 노래방, 영통 파티룸, 수원 단체 회식, 가라오케 문화, 노래방 에티켓, 음향시설 비교, 룸 크기별 추천, 생일파티 장소, 가성비 가라오케" />
+                <meta property="og:title" content="수원 가라오케 장소 선택 가이드 | 용도별 추천" />
+                <meta property="og:description" content="회식·생일파티·데이트별 선택 기준 | 음향·분위기·가격 비교 | 초보자 가이드" />
+                <meta property="og:image" content="https://suwon.vip/og-karaoke.jpg" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
-                <meta property="og:image:alt" content="분당 가라오케 가격 및 예약 가이드" />
+                <meta property="og:image:alt" content="수원 가라오케 장소 선택 가이드" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="ko_KR" />
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:title" content="분당 가라오케 | NO.1 서우실장" />
-                <meta property="twitter:description" content="정자·서현 TOP 6 | 고급 음향시설 | 24시간 예약" />
-                <meta property="twitter:image" content="https://bundanghipublic.com/og-karaoke.jpg" />
-                <link rel="canonical" href="https://bundanghipublic.com/bundang-karaoke-guide" />
+                <meta property="twitter:title" content="수원 가라오케 선택 가이드" />
+                <meta property="twitter:description" content="용도별·분위기별 추천 | 음향 비교 | 에티켓 안내" />
+                <meta property="twitter:image" content="https://suwon.vip/og-karaoke.jpg" />
+                <link rel="canonical" href="https://suwon.vip/suwon-karaoke-guide" />
             </Helmet>
             <SchemaJsonLd data={[serviceSchema, faqSchema]} />
 
             <div className="pt-24 md:pt-32 min-h-screen bg-slate-950">
                 <div className="container mx-auto px-4 pb-12 max-w-6xl">
-                    <SectionTitle title="분당 가라오케 가이드" subtitle="Luxury & Fun" />
+                    <SectionTitle title="수원 가라오케 101: 용도별 선택 가이드" subtitle="비교와 선택" />
 
                     {/* Intro Text */}
                     <div className="mb-20 text-center max-w-4xl mx-auto">
                         <p className="text-xl text-slate-300 leading-relaxed font-light">
-                            스트레스를 한 번에 날려버릴 <strong className="text-purple-400">최고의 사운드</strong>와 <strong className="text-white">프라이빗한 공간</strong>.<br />
-                            분당 서우실장이 엄선한 프리미엄 가라오케에서<br />
-                            당신의 소중한 사람들과 잊지 못할 뜨거운 밤을 만들어 보세요.
+                            회식, 생일파티, 데이트, 친구 모임... <strong className="text-purple-400">목적에 맞는</strong> 가라오케 선택이 중요합니다.<br />
+                            음향 시설, 룸 크기, 분위기, 가격대까지 꼼꼼하게 비교하여<br />
+                            <strong className="text-white">최적의 장소</strong>를 찾을 수 있도록 도와드립니다.
                         </p>
                     </div>
 
                     <TableOfContents sections={sections} />
 
                     {/* 1. Definition */}
-                    <ContentBlock id="features" title="1. 분당 가라오케의 특징">
+                    <ContentBlock id="features" title="1. 수원 가라오케의 특징">
                         <p>
-                            분당 가라오케는 단순한 노래방을 넘어선 <strong>'토탈 엔터테인먼트 공간'</strong>을 지향합니다. 강남의 고급 가라오케 시스템을 그대로 도입하여,
+                            수원 가라오케는 단순한 노래방을 넘어선 <strong>'토탈 엔터테인먼트 공간'</strong>을 지향합니다. 강남의 고급 가라오케 시스템을 그대로 도입하여,
                             웨이터의 격식 있는 서빙과 호텔 셰프 수준의 고급 안주, 그리고 무엇보다 <strong>콘서트장을 방불케 하는 하이엔드 음향 시설</strong>을 갖추고 있습니다.
                         </p>
                         <p>
@@ -252,7 +209,7 @@ const Karaoke = () => {
                     <div id="recommendation" className="mb-24">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-1.5 h-8 bg-purple-500 rounded-full"></div>
-                            <h2 className="text-3xl font-bold text-white">2. 분당 가라오케 추천 TOP 6</h2>
+                            <h2 className="text-3xl font-bold text-white">2. 수원 가라오케 추천 TOP 6</h2>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
                             {venues.karaoke.map(venue => <VenueCard key={venue.id} venue={venue} />)}
@@ -262,7 +219,7 @@ const Karaoke = () => {
                     {/* 3. Pricing & System */}
                     <ContentBlock id="pricing" title="3. 이용 가격 및 시스템 안내">
                         <p>
-                            분당 가라오케는 투명한 정찰제로 운영됩니다.
+                            수원 가라오케는 투명한 정찰제로 운영됩니다.
                             <strong>양주 SET</strong>가 가장 인기 있는 기본 메뉴이며, 인원수와 시간에 따라 추가 비용이 발생할 수 있습니다.
                         </p>
 
@@ -280,7 +237,7 @@ const Karaoke = () => {
                                     <tr className="border-b border-slate-800">
                                         <td className="py-3 px-4 font-bold text-white">양주 A SET</td>
                                         <td className="py-3 px-4">12년산 (골든블루 등) + 과일 + 마른안주 + 음료</td>
-                                        <td className="py-3 px-4">150,000원 ~</td>
+                                        <td className="py-3 px-4">180,000원 ~</td>
                                     </tr>
                                     <tr className="border-b border-slate-800">
                                         <td className="py-3 px-4 font-bold text-white">양주 B SET</td>
@@ -336,7 +293,7 @@ const Karaoke = () => {
                                 ))}
                             </div>
                             <div className="mt-6 text-center">
-                                <Link to="/bundang-karaoke-guide/faq" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 font-bold transition-colors">
+                                <Link to="/suwon-karaoke-guide/faq" className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 font-bold transition-colors">
                                     더 많은 질문과 답변 보기 <ChevronRight size={18} />
                                 </Link>
                             </div>
@@ -349,7 +306,7 @@ const Karaoke = () => {
                         <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 relative z-10">오늘 밤, 당신이 무대의 주인공입니다</h2>
                         <p className="text-purple-100 mb-8 max-w-2xl mx-auto relative z-10">
                             최고의 시설에서 터질 듯한 사운드와 함께 스트레스를 풀어보세요.<br />
-                            분당 1등 가라오케 예약은 서우실장이 가장 빠르고 저렴합니다.
+                            수원 1등 가라오케 예약은 서우실장이 가장 빠르고 저렴합니다.
                         </p>
                         <button onClick={() => window.location.href = 'tel:01026264833'} className="bg-white text-purple-900 font-bold py-4 px-12 rounded-full shadow-lg hover:scale-105 transition-transform relative z-10 flex items-center gap-2 mx-auto">
                             <Phone fill="currentColor" size={20} /> 010-2626-4833 간편 예약

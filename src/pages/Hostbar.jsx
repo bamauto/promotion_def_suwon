@@ -77,53 +77,32 @@ const VenueCard = ({ venue }) => (
     </article>
 );
 
-import hostbarLogo from '../assets/hostbar_logo.png';
+import venueImg1 from '../assets/suwon-hostbar-1.webp';
+import venueImg2 from '../assets/ingye-hostbar-2.webp';
 
 const venues = {
     hostbar: [
         {
             id: 'hb-1',
-            name: '분당 호빠 A점',
+            name: '수원 프리미엄 호빠',
             type: 'Wild & Sexy',
-            location: '분당 서현역 AK플라자 6번 게이트',
+            location: '수원 영통역 AK플라자 6번 게이트',
             price: '여성전용 특가',
-            desc: '야성을 깨우는 짐승남들의 핫한 퍼포먼스. 서현역 메인 상권에 위치하여 접근성이 좋으며, 파워풀하고 에너지 넘치는 선수들이 스트레스를 확실하게 풀어드립니다.',
+            desc: '야성을 깨우는 짐승남들의 핫한 퍼포먼스. 영통역 메인 상권에 위치하여 접근성이 좋으며, 파워풀하고 에너지 넘치는 선수들이 스트레스를 확실하게 풀어드립니다.',
             features: ['근육질 선수', '퍼포먼스 쇼', '생일 샴페인', '픽업 서비스'],
-            img: hostbarLogo,
-            imgAlt: '분당 호빠 A점 로고'
+            img: venueImg1,
+            imgAlt: '수원 프리미엄 호빠 인테리어'
         },
         {
             id: 'hb-2',
-            name: '분당 호빠 B점',
+            name: '인계동 로맨틱 호빠',
             type: 'Flower Boys',
-            location: '분당 정자동 엠코헤리츠',
-            price: '풀코스 150,000원 ~',
+            location: '수원 인계동 엠코헤리츠',
+            price: '풀코스 180,000원 ~',
             desc: '순정만화에서 튀어나온 듯한 꽃미남 선수들의 달콤한 속삭임. 로맨틱한 분위기에서 공주님이 된 듯한 기분을 만끽하세요. 섬세하고 자상한 매너가 특징입니다.',
             features: ['아이돌급 외모', '로맨틱 이벤트', '대화형 선수', '프러포즈룸'],
-            img: hostbarLogo,
-            imgAlt: '분당 호빠 B점 로고'
-        },
-        {
-            id: 'hb-3',
-            name: '분당 호빠 C점',
-            type: 'Model Club',
-            location: '판교역 현대백화점 인근',
-            price: '고급 양주 SET',
-            desc: '평균 신장 185cm 이상의 현직 모델들로 구성된 하이엔드 호빠. 런웨이를 보는 듯한 압도적인 비주얼과 고급스러운 매너로 VVIP 고객님들을 모십니다.',
-            features: ['모델 라인업', '패션쇼 이벤트', '고급 발렛', '샴페인 타워'],
-            img: hostbarLogo,
-            imgAlt: '분당 호빠 C점 로고'
-        },
-        {
-            id: 'hb-4',
-            name: '분당 호빠 D점',
-            type: 'Casual Pub',
-            location: '분당 모란역 먹자골목',
-            price: '소주/맥주 SET',
-            desc: '부담 없이 즐기는 캐주얼 호스트바. 친구들과 생일 파티나 모임 하기에 좋은 쾌활하고 신나는 분위기입니다. 노래 잘하고 춤 잘 추는 끼 많은 선수들이 대기 중입니다.',
-            features: ['노래방 시설', '댄스 타임', '가성비', '단체 환영'],
-            img: hostbarLogo,
-            imgAlt: '분당 호빠 D점 로고'
+            img: venueImg2,
+            imgAlt: '인계동 로맨틱 호빠 인테리어'
         }
     ]
 };
@@ -131,21 +110,21 @@ const venues = {
 const Hostbar = () => {
     const faqList = [
         {
-            question: "2차(애프터)가 가능한가요?",
-            answer: "선수 개인의 의사와 합의에 따라 결정되는 부분이며, 가게 공식적으로는 강요하거나 관여하지 않습니다."
+            question: "2차(애프터)에 대해 알고 싶습니다",
+            answer: "2차는 선수 개인의 의사에 따라 결정됩니다. 업소에서 공식적으로 강요하거나 관여하지 않습니다. 상호 합의가 중요하며, 무리한 요구는 삼가시는 것이 좋습니다."
         },
         {
-            question: "혼자 가도 민망하지 않을까요?",
-            answer: "절대 그렇지 않습니다. 오히려 혼자 오셔서 선수와 깊은 대화를 나누며 힐링하고 가시는 단골 고객님들이 많습니다."
+            question: "1인 방문해도 괜찮을까요?",
+            answer: "전혀 문제없습니다. 오히려 혼자 방문하여 편안하게 대화를 나누고 힐링하는 고객이 많습니다. 부담 갖지 않으셔도 됩니다."
         },
         {
-            question: "선수들 사이즈는 어떤가요?",
-            answer: "강남 정빠 출신부터 아이돌 연습생, 모델 출신 등 분당 최고 수질을 자부합니다. 취향에 맞춰 초이스 하실 수 있습니다."
+            question: "호스트의 스타일은 다양한가요?",
+            answer: "네, 다양한 스타일의 호스트가 있습니다. 예약 시 선호하는 스타일(외모, 대화 스타일, 분위기 등)을 미리 말씀해 주시면 맞춤 추천을 받으실 수 있습니다."
         }
     ];
 
     const sections = [
-        { id: "definition", title: "1. 분당 호빠 시스템" },
+        { id: "definition", title: "1. 수원 호빠 시스템" },
         { id: "recommendation", title: "2. 추천 업소" },
         { id: "system", title: "3. 이용 시스템 및 가이드" },
         { id: "faq", title: "4. 이용 꿀팁 및 FAQ" }
@@ -153,8 +132,8 @@ const Hostbar = () => {
 
     const serviceSchema = generateServiceSchema(
         "Host Bar",
-        "분당 호스트바 추천 및 가격. 여성 전용 프라이빗 룸 및 픽업 서비스.",
-        "https://bundanghipublic.com/bundang-hostbar-guide",
+        "수원 호스트바 추천 및 가격. 여성 전용 프라이빗 룸 및 픽업 서비스.",
+        "https://suwon.vip/suwon-hostbar-guide",
         "150000"
     );
 
@@ -163,43 +142,43 @@ const Hostbar = () => {
     return (
         <>
             <Helmet>
-                <title>분당 호빠 가격 예약 | 여성전용 NO.1 서우실장</title>
-                <meta name="description" content="분당 호빠(호스트바) 완벽 가이드 | 여성 전용 프리미엄 클럽 | 모델급 선수 무한 초이스 | 정자·서현·판교 전 지역 픽업 | 비밀 보장 | 24시간 예약 ☎ 010-2626-4833" />
-                <meta name="keywords" content="분당 호빠, 분당 호스트바, 분당 호빠 가격, 분당 호빠 예약, 여성전용 클럽, 분당 정빠" />
-                <meta property="og:title" content="분당 호빠 가격 예약 | NO.1 서우실장" />
-                <meta property="og:description" content="여성 전용 프리미엄 클럽 | 모델급 선수 무한 초이스 | 24시간 예약 ☎ 010-2626-4833" />
-                <meta property="og:image" content="https://bundanghipublic.com/og-hostbar.jpg" />
+                <title>여성 맞춤형 라운지 선택 가이드 | 수원 호스트바 문화 이해</title>
+                <meta name="description" content="여성 고객을 위한 프리미엄 라운지 문화 이해 | 서비스 형식·분위기·비용·장점 완벽 정복 | 호스트바 이용 에티켓과 팁 | 안전하고 즐거운 경험을 위한 체크리스트" />
+                <meta name="keywords" content="수원 호스트바 가이드, 여성 라운지 문화, 호스트바 이해, 라운지 경험, 여성 친화 클럽, 호스트바 매너, 안전한 라운지, 라운지 에티켓, 비용 기준, 선택 가이드" />
+                <meta property="og:title" content="수원 호스트바 문화 가이드 | 여성 라운지 선택" />
+                <meta property="og:description" content="호스트바 문화 이해 | 안전한 이용 가이드 | 에티켓과 팁" />
+                <meta property="og:image" content="https://suwon.vip/og-hostbar.jpg" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="ko_KR" />
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:title" content="분당 호빠 | NO.1 서우실장" />
-                <meta property="twitter:description" content="여성 전용 클럽 | 모델급 선수 | 비밀 보장 | 24시간 예약" />
-                <meta property="twitter:image" content="https://bundanghipublic.com/og-hostbar.jpg" />
-                <link rel="canonical" href="https://bundanghipublic.com/bundang-hostbar-guide" />
+                <meta property="twitter:title" content="수원 호스트바 문화 가이드" />
+                <meta property="twitter:description" content="여성 라운지 선택 | 안전 이용 | 에티켓 안내" />
+                <meta property="twitter:image" content="https://suwon.vip/og-hostbar.jpg" />
+                <link rel="canonical" href="https://suwon.vip/suwon-hostbar-guide" />
             </Helmet>
             <SchemaJsonLd data={[serviceSchema, faqSchema]} />
 
             <div className="pt-24 md:pt-32 min-h-screen bg-slate-950">
                 <div className="container mx-auto px-4 pb-12 max-w-6xl">
-                    <SectionTitle title="분당 호빠(Hostbar) 가이드" subtitle="Private for Ladies" />
+                    <SectionTitle title="호스트바 문화 입문: 여성 라운지 선택 가이드" subtitle="이해와 선택" />
 
                     {/* Intro Text */}
                     <div className="mb-20 text-center max-w-4xl mx-auto">
                         <p className="text-xl text-slate-300 leading-relaxed font-light">
-                            오늘 밤, <strong className="text-rose-400">당신만이 주인공</strong>이 되는 시간.<br />
-                            최고의 비주얼과 매너를 갖춘 선수들이<br />
-                            당신의 공허한 마음을 설렘으로 가득 채워드립니다.
+                            호스트바 문화가 처음이신가요? <strong className="text-rose-400">안전하고 즐거운 경험</strong>을 위해<br />
+                            서비스 형식, 분위기, 비용, 에티켓까지<br />
+                            <strong className="text-white">꼭 알아야 할 정보</strong>를 정리해 드립니다.
                         </p>
                     </div>
 
                     <TableOfContents sections={sections} />
 
                     {/* 1. Definition */}
-                    <ContentBlock id="definition" title="1. 분당 호빠 시스템">
+                    <ContentBlock id="definition" title="1. 수원 호빠 시스템">
                         <p>
-                            분당 호스트바는 오직 여성 고객님들만을 위한 프라이빗 유흥 공간입니다.
+                            수원 호스트바는 오직 여성 고객님들만을 위한 프라이빗 유흥 공간입니다.
                             서울 강남의 '정빠', '퍼블릭' 퀄리티를 유지하면서도 주대는 훨씬 합리적인 것이 장점입니다.
                         </p>
                         <p>
@@ -213,7 +192,7 @@ const Hostbar = () => {
                     <div id="recommendation" className="mb-24">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-1.5 h-8 bg-rose-500 rounded-full"></div>
-                            <h2 className="text-3xl font-bold text-white">2. 분당 호빠 추천 업소</h2>
+                            <h2 className="text-3xl font-bold text-white">2. 수원 호빠 추천 업소</h2>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                             {venues.hostbar.map(venue => <VenueCard key={venue.id} venue={venue} />)}

@@ -65,12 +65,12 @@ const Layout = ({ children }) => {
                     <nav className="hidden md:flex gap-2">
                         <NavLink to="/" label="HOME" currentPath={location.pathname} />
                         <div className="w-px h-4 bg-slate-800 my-auto mx-2"></div>
-                        <NavLink to="/bundang-hyperpub-guide" label="하이퍼블릭" currentPath={location.pathname} />
-                        <NavLink to="/bundang-karaoke-guide" label="가라오케" currentPath={location.pathname} />
-                        <NavLink to="/bundang-shirtsroom-guide" label="셔츠룸" currentPath={location.pathname} />
-                        <NavLink to="/bundang-kimono-room-guide" label="기모노룸" currentPath={location.pathname} />
-                        <NavLink to="/bundang-room-salon-guide" label="룸살롱" currentPath={location.pathname} />
-                        <NavLink to="/bundang-hostbar-guide" label="호빠" currentPath={location.pathname} />
+                        <NavLink to="/suwon-highpub-guide" label="하이퍼블릭" currentPath={location.pathname} />
+                        <NavLink to="/suwon-karaoke-guide" label="가라오케" currentPath={location.pathname} />
+                        <NavLink to="/suwon-shirtsroom-guide" label="셔츠룸" currentPath={location.pathname} />
+                        <NavLink to="/suwon-kimono-room-guide" label="기모노룸" currentPath={location.pathname} />
+                        <NavLink to="/suwon-room-salon-guide" label="룸살롱" currentPath={location.pathname} />
+                        <NavLink to="/suwon-hostbar-guide" label="호빠" currentPath={location.pathname} />
                         <div className="w-px h-4 bg-slate-800 my-auto mx-2"></div>
                         <NavLink to="/contact" label="문의하기" currentPath={location.pathname} />
                     </nav>
@@ -85,12 +85,12 @@ const Layout = ({ children }) => {
                 <div className={`md:hidden absolute w-full bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
                     <nav className="flex flex-col items-center py-8 space-y-6 h-screen">
                         <NavLink to="/" label="홈" currentPath={location.pathname} />
-                        <NavLink to="/bundang-hyperpub-guide" label="하이퍼블릭" currentPath={location.pathname} />
-                        <NavLink to="/bundang-karaoke-guide" label="가라오케" currentPath={location.pathname} />
-                        <NavLink to="/bundang-shirtsroom-guide" label="셔츠룸" currentPath={location.pathname} />
-                        <NavLink to="/bundang-kimono-room-guide" label="기모노룸" currentPath={location.pathname} />
-                        <NavLink to="/bundang-room-salon-guide" label="룸살롱" currentPath={location.pathname} />
-                        <NavLink to="/bundang-hostbar-guide" label="호빠" currentPath={location.pathname} />
+                        <NavLink to="/suwon-highpub-guide" label="하이퍼블릭" currentPath={location.pathname} />
+                        <NavLink to="/suwon-karaoke-guide" label="가라오케" currentPath={location.pathname} />
+                        <NavLink to="/suwon-shirtsroom-guide" label="셔츠룸" currentPath={location.pathname} />
+                        <NavLink to="/suwon-kimono-room-guide" label="기모노룸" currentPath={location.pathname} />
+                        <NavLink to="/suwon-room-salon-guide" label="룸살롱" currentPath={location.pathname} />
+                        <NavLink to="/suwon-hostbar-guide" label="호빠" currentPath={location.pathname} />
                         <NavLink to="/contact" label="문의하기" currentPath={location.pathname} />
                     </nav>
                 </div>
@@ -114,7 +114,7 @@ const Layout = ({ children }) => {
                     <div className="max-w-2xl mx-auto mb-8">
                         <p className="text-slate-400 leading-relaxed mb-4 italic">
                             "단 한 번의 인연도 결코 가벼이 어기지 않겠습니다.<br />
-                            분당 유흥의 품격 있는 기준, 믿음직한 파트너로서<br />
+                            수원 유흥의 품격 있는 기준, 믿음직한 파트너로서<br />
                             언제나 정상을 다하는 서우실장이 되겠습니다."
                         </p>
                         <div className="h-px w-12 bg-amber-500/30 mx-auto mb-4"></div>
@@ -123,10 +123,10 @@ const Layout = ({ children }) => {
                             <span className="text-slate-700">|</span>
                             <Link to="/privacy" className="text-slate-500 hover:text-amber-500 transition-colors">개인정보처리방침</Link>
                         </div>
-                        <p className="text-xs text-slate-600 font-medium">분당 유흥의 모든 것, 서우 실장 | 대표: 서우 | 사업자등록번호: 000-00-00000 | 010-2626-4833</p>
+                        <p className="text-xs text-slate-600 font-medium">수원 유흥의 모든 것, 서우 실장 | 대표: 서우 | 사업자등록번호: 000-00-00000 | 010-2626-4833</p>
                     </div>
 
-                    <p className="opacity-30 text-xs">© COPYRIGHT 2026, 분당 서우실장. ALL RIGHTS RESERVED.</p>
+                    <p className="opacity-30 text-xs">© COPYRIGHT 2026, 수원 서우실장. ALL RIGHTS RESERVED.</p>
                 </div>
             </footer>
 

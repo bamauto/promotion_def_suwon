@@ -82,25 +82,25 @@ const venues = {
     roomSalon: [
         {
             id: 'rs-1',
-            name: '분당 룸살롱 - 로얄 비즈니스',
+            name: '수원 룸살롱 - 로얄 비즈니스',
             type: 'High-End Business',
-            location: '분당 정자동 엠코헤리츠 인근',
+            location: '수원 인계동 엠코헤리츠 인근',
             price: '양주 SET 250,000원 ~',
             desc: '성공적인 비즈니스를 위한 격조 높은 공간. 철저한 보안과 프라이빗한 룸, 최고급 인테리어로 귀하의 품격을 높여드립니다. 중요한 접대 자리에 강력 추천합니다.',
             features: ['VVIP 전용', '비즈니스 접대 특화', '통역 매니저 대기', '호텔 셰프 안주'],
-            img: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-            imgAlt: '분당 로얄 비즈니스 룸살롱'
+            img: '/venue-img-2.webp',
+            imgAlt: '수원 로얄 비즈니스 룸살롱'
         },
         {
             id: 'rs-2',
-            name: '분당 룸살롱 - 레거시 클럽',
+            name: '수원 룸살롱 - 레거시 클럽',
             type: 'Traditional Luxury',
-            location: '분당 서현역 AK플라자 인근',
+            location: '수원 영통역 AK플라자 인근',
             price: '양주 SET 200,000원 ~',
             desc: '전통 룸살롱의 정수를 느낄 수 있는 곳. 숙련된 마담과 매니저들의 노련한 케어로 편안하고 즐거운 술자리를 보장합니다.',
             features: ['정통 시스템', '최고급 양주 라인업', '라이브 밴드', '단체룸 완비'],
-            img: 'https://images.unsplash.com/photo-1560185009-dddeb820c7b7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-            imgAlt: '분당 레거시 클럽 룸살롱'
+            img: '/venue-img-9.webp',
+            imgAlt: '수원 레거시 클럽 룸살롱'
         }
     ]
 };
@@ -108,30 +108,30 @@ const venues = {
 const RoomSalon = () => {
     const faqList = [
         {
-            question: "일반 노래방이나 퍼블릭과 어떻게 다른가요?",
-            answer: "시설, 주류 라인업, 그리고 무엇보다 매니저들의 마인드와 서비스 퀄리티에서 격이 다릅니다. 중요한 비즈니스를 위한 최적의 장소입니다."
+            question: "룸살롱과 다른 유형의 차이점은 무엇인가요?",
+            answer: "룸살롱은 비즈니스 접대에 특화된 고급 라운지입니다. 시설, 주류 라인업, 서비스 품질이 상대적으로 높으며, 프라이빗한 환경과 정숙한 분위기가 특징입니다. 중요한 바이어 미팅이나 클라이언트 접대에 적합합니다."
         },
         {
-            question: "1명도 예약 가능한가요?",
-            answer: "네, 물론입니다. VIP 고객님들의 1인 방문 비중이 높습니다. 프라이빗하게 케어해 드립니다."
+            question: "1인 방문도 가능한가요?",
+            answer: "가능합니다. 1인 방문 고객도 많으며, 프라이빗한 환경에서 편안하게 이용하실 수 있습니다. 다만 일부 업소는 2인 이상을 권장하기도 하니 사전에 확인하세요."
         },
         {
-            question: "접대 비용 처리는 가능한가요?",
-            answer: "네, 법인 카드 결제 및 세금계산서 발행이 가능합니다. 예약 시 미리 말씀해 주세요."
+            question: "법인 카드 결제나 세금계산서 발행이 가능한가요?",
+            answer: "대부분의 업소에서 법인 카드 결제와 세금계산서 발행이 가능합니다. 다만 발행 가능 여부와 항목 명칭은 업소마다 다르므로 예약 시 미리 확인하시는 것이 좋습니다."
         }
     ];
 
     const sections = [
-        { id: "definition", title: "1. 분당 룸살롱이란?" },
+        { id: "definition", title: "1. 수원 룸살롱이란?" },
         { id: "recommendation", title: "2. 추천 업소" },
         { id: "system", title: "3. 이용 시스템 및 특징" },
         { id: "faq", title: "4. 이용 꿀팁 및 FAQ" }
     ];
 
     const serviceSchema = generateServiceSchema(
-        "Bundang Room Salon",
-        "분당 최고급 정통 룸살롱 예약 및 비즈니스 접대 가이드.",
-        "https://bundanghipublic.com/bundang-room-salon-guide",
+        "Suwon Room Salon",
+        "수원 최고급 정통 룸살롱 예약 및 비즈니스 접대 가이드.",
+        "https://suwon.vip/suwon-room-salon-guide",
         "200000"
     );
 
@@ -140,42 +140,42 @@ const RoomSalon = () => {
     return (
         <>
             <Helmet>
-                <title>분당 룸살롱 가격 예약 | 비즈니스 접대 NO.1 서우실장</title>
-                <meta name="description" content="분당 룸살롱 프리미엄 가이드 | VVIP 비즈니스 접대 특화 | 프리미엄 인테리어 | 철저한 프라이빗 보장 | 투명한 주대 정책 | 24시간 예약 ☎ 010-2626-4833" />
-                <meta name="keywords" content="분당 룸살롱, 분당 룸살롱 가격, 분당 룸살롱 예약, 분당 접대, 분당 비즈니스 접대, 정자동 룸살롱, 서현 룸살롱" />
-                <meta property="og:title" content="분당 룸살롱 가격 예약 | NO.1 서우실장" />
-                <meta property="og:description" content="VVIP 비즈니스 접대 | 프리미엄 인테리어 | 24시간 예약 ☎ 010-2626-4833" />
-                <meta property="og:image" content="https://bundanghipublic.com/og-room-salon.jpg" />
+                <title>수원 룸살롱 비즈니스 접대 가이드 | 효과적인 선택과 매너</title>
+                <meta name="description" content="수원 고급 룸살롱 선택 기준 및 효과적 활용법 | 바이어 접대·클라이언트 관계 구축 전략 | 비즈니스 파트너 선정 가이드 | 접대 매너·에티켓·비용 효율화 팁" />
+                <meta name="keywords" content="수원 룸살롱 가이드, 비즈니스 접대 전략, 라운지 문화, 접대 매너, 접대 에티켓, 클라이언트 접대, 바이어 관계 구축, 비용 효율화, 인계동 라운지, 영통 고급 라운지" />
+                <meta property="og:title" content="수원 룸살롱 비즈니스 접대 가이드 | 선택과 매너" />
+                <meta property="og:description" content="효과적인 접대 전략 | 라운지 선택 기준 | 에티켓 안내 | 비용 효율화" />
+                <meta property="og:image" content="https://suwon.vip/og-room-salon.jpg" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
-                <meta property="og:image:alt" content="분당 룸살롱 비즈니스 접대 가이드" />
+                <meta property="og:image:alt" content="수원 룸살롱 비즈니스 접대 가이드" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="ko_KR" />
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:title" content="분당 룸살롱 | NO.1 서우실장" />
-                <meta property="twitter:description" content="VVIP 비즈니스 접대 | 프리미엄 인테리어 | 24시간 예약" />
-                <meta property="twitter:image" content="https://bundanghipublic.com/og-room-salon.jpg" />
-                <link rel="canonical" href="https://bundanghipublic.com/bundang-room-salon-guide" />
+                <meta property="twitter:title" content="수원 룸살롱 접대 가이드" />
+                <meta property="twitter:description" content="비즈니스 접대 전략 | 라운지 선택 | 에티켓 안내" />
+                <meta property="twitter:image" content="https://suwon.vip/og-room-salon.jpg" />
+                <link rel="canonical" href="https://suwon.vip/suwon-room-salon-guide" />
             </Helmet>
             <SchemaJsonLd data={[serviceSchema, faqSchema]} />
 
             <div className="pt-24 md:pt-32 min-h-screen bg-slate-950">
                 <div className="container mx-auto px-4 pb-12 max-w-6xl">
-                    <SectionTitle title="분당 룸살롱 예약 & 가이드" subtitle="Traditional Luxury" />
+                    <SectionTitle title="효과적인 비즈니스 접대: 라운지 선택 가이드" subtitle="전략과 매너" />
 
                     {/* Intro Text */}
                     <div className="mb-20 text-center max-w-4xl mx-auto">
                         <p className="text-xl text-slate-300 leading-relaxed font-light">
-                            성공적인 비즈니스는 <strong className="text-amber-500">격조 높은 공간</strong>에서 시작됩니다.<br />
-                            서우 실장이 엄선한 분당 상위 1% 룸살롱에서<br />
-                            귀하의 소중한 파트너에게 최고의 대우를 선사하세요.
+                            성공적인 비즈니스는 <strong className="text-amber-500">적절한 장소 선택</strong>에서 시작됩니다.<br />
+                            바이어 접대, 클라이언트 관계 구축을 위한 라운지 선택 기준과<br />
+                            <strong className="text-white">효과적인 접대 매너</strong>를 안내해 드립니다.
                         </p>
                     </div>
 
                     <TableOfContents sections={sections} />
 
                     {/* 1. Definition */}
-                    <ContentBlock id="definition" title="1. 분당 룸살롱이란? (Introduction)">
+                    <ContentBlock id="definition" title="1. 수원 룸살롱이란? (Introduction)">
                         <p>
                             <strong>정통 룸살롱</strong>은 하이퍼블릭이나 가라오케보다 한 차원 높은 서비스와 수질을 제공하는
                             <strong> 프라이빗 비즈니스 클럽</strong>입니다.
@@ -263,7 +263,7 @@ const RoomSalon = () => {
                                 ))}
                             </div>
                             <div className="mt-6 text-center">
-                                <Link to="/bundang-room-salon-guide/faq" className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-400 font-bold transition-colors">
+                                <Link to="/suwon-room-salon-guide/faq" className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-400 font-bold transition-colors">
                                     더 많은 질문과 답변 보기 <ChevronRight size={18} />
                                 </Link>
                             </div>
@@ -276,7 +276,7 @@ const RoomSalon = () => {
                         <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 relative z-10">귀하의 품격에 어울리는 곳</h2>
                         <p className="text-amber-100 mb-8 max-w-2xl mx-auto relative z-10">
                             중요한 자리일수록 전문가에게 맡기셔야 합니다.<br />
-                            분당 정통 룸살롱 예약 1위, 서우실장이 책임지겠습니다.
+                            수원 정통 룸살롱 예약 1위, 서우실장이 책임지겠습니다.
                         </p>
                         <button onClick={() => window.location.href = 'tel:01026264833'} className="bg-white text-amber-800 font-bold py-4 px-12 rounded-full shadow-lg hover:scale-105 transition-transform relative z-10 flex items-center gap-2 mx-auto">
                             <Phone fill="currentColor" size={20} /> 010-2626-4833 예약 문의

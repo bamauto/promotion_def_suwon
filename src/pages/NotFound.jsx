@@ -7,7 +7,7 @@ const NotFound = () => {
     return (
         <>
             <Helmet>
-                <title>페이지를 찾을 수 없습니다 | 분당 서우실장</title>
+                <title>페이지를 찾을 수 없습니다 | 수원 서우실장</title>
                 <meta name="robots" content="noindex" />
             </Helmet>
 

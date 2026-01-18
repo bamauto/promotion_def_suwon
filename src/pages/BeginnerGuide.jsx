@@ -9,43 +9,43 @@ const BeginnerGuide = () => {
     const howToSchema = {
         "@context": "https://schema.org",
         "@type": "HowTo",
-        "name": "분당 유흥업소(룸) 처음 이용하는 방법 가이드",
-        "description": "분당 하이퍼블릭, 룸살롱 등 유흥업소를 처음 방문하는 초보자를 위한 단계별 이용 가이드입니다. 예약부터 결제까지 상세 과정을 안내합니다.",
+        "name": "수원 유흥업소(룸) 처음 이용하는 방법 가이드",
+        "description": "수원 하이퍼블릭, 룸살롱 등 유흥업소를 처음 방문하는 초보자를 위한 단계별 이용 가이드입니다. 예약부터 결제까지 상세 과정을 안내합니다.",
         "step": [
             {
                 "@type": "HowToStep",
                 "name": "전화 예약 및 견적 문의",
                 "text": "방문 전 담당 실장에게 전화를 걸어 인원수, 방문 시간, 원하는 스타일(업종)을 말하고 견적을 확인합니다.",
-                "image": "https://bundanghipublic.com/step1-call.jpg",
-                "url": "https://bundanghipublic.com/bundang-entertainment-beginner-guide#step1"
+                "image": "https://suwon.vip/step1-call.jpg",
+                "url": "https://suwon.vip/suwon-entertainment-beginner-guide#step1"
             },
             {
                 "@type": "HowToStep",
                 "name": "업소 방문 및 룸 배정",
                 "text": "약속된 시간에 업소에 도착하여 담당 실장을 찾습니다. 인원에 맞는 룸으로 안내받습니다.",
-                "image": "https://bundanghipublic.com/step2-room.jpg",
-                "url": "https://bundanghipublic.com/bundang-entertainment-beginner-guide#step2"
+                "image": "https://suwon.vip/step2-room.jpg",
+                "url": "https://suwon.vip/suwon-entertainment-beginner-guide#step2"
             },
             {
                 "@type": "HowToStep",
                 "name": "초이스(Choice) 진행",
                 "text": "담당 실장이 매니저들을 보여드립니다(매직미러 또는 조별 입장). 마음에 드는 파트너를 선택합니다.",
-                "image": "https://bundanghipublic.com/step3-choice.jpg",
-                "url": "https://bundanghipublic.com/bundang-entertainment-beginner-guide#step3"
+                "image": "https://suwon.vip/step3-choice.jpg",
+                "url": "https://suwon.vip/suwon-entertainment-beginner-guide#step3"
             },
             {
                 "@type": "HowToStep",
                 "name": "음주가무 및 파트너 케어",
                 "text": "정해진 시간 동안 술과 노래를 즐기며 파트너와 즐거운 시간을 보냅니다.",
-                "image": "https://bundanghipublic.com/step4-party.jpg",
-                "url": "https://bundanghipublic.com/bundang-entertainment-beginner-guide#step4"
+                "image": "https://suwon.vip/step4-party.jpg",
+                "url": "https://suwon.vip/suwon-entertainment-beginner-guide#step4"
             },
             {
                 "@type": "HowToStep",
                 "name": "계산 및 귀가",
                 "text": "시간이 종료되면 계산서를 확인하고 결제합니다. 대리운전이나 픽업 차량을 요청하여 안전하게 귀가합니다.",
-                "image": "https://bundanghipublic.com/step5-pay.jpg",
-                "url": "https://bundanghipublic.com/bundang-entertainment-beginner-guide#step5"
+                "image": "https://suwon.vip/step5-pay.jpg",
+                "url": "https://suwon.vip/suwon-entertainment-beginner-guide#step5"
             }
         ]
     };
@@ -53,22 +53,22 @@ const BeginnerGuide = () => {
     return (
         <>
             <Helmet>
-                <title>분당 유흥 초보 가이드 | 룸살롱·하이퍼블릭 처음 이용하는 법</title>
+                <title>수원 유흥 초보 가이드 | 룸살롱·하이퍼블릭 처음 이용하는 법</title>
                 <meta name="description" content="룸살롱 처음이라 긴장되시나요? 예약→초이스→결제 단계별 완벽 가이드 | 초보자 필독 이용 꿀팁 | 내상 ZERO 비법 | 매너 & 에티켓 | ☎ 010-2626-4833" />
-                <meta name="keywords" content="룸살롱 이용방법, 하이퍼블릭 초이스 팁, 룸살롱 매너, 유흥업소 초보 가이드, 분당 유흥 처음" />
-                <meta property="og:title" content="분당 유흥 초보 가이드 | 완벽 이용 매뉴얼" />
+                <meta name="keywords" content="룸살롱 이용방법, 하이퍼블릭 초이스 팁, 룸살롱 매너, 유흥업소 초보 가이드, 수원 유흥 처음" />
+                <meta property="og:title" content="수원 유흥 초보 가이드 | 완벽 이용 매뉴얼" />
                 <meta property="og:description" content="예약→초이스→결제 단계별 가이드 | 초보자 필독 | 내상 ZERO 비법" />
-                <meta property="og:image" content="https://bundanghipublic.com/og-beginner.jpg" />
+                <meta property="og:image" content="https://suwon.vip/og-beginner.jpg" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
-                <meta property="og:image:alt" content="분당 유흥 초보자 가이드" />
+                <meta property="og:image:alt" content="수원 유흥 초보자 가이드" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="ko_KR" />
                 <meta property="twitter:card" content="summary_large_image" />
                 <meta property="twitter:title" content="유흥 초보 가이드 | 완벽 매뉴얼" />
                 <meta property="twitter:description" content="예약→초이스→결제 | 초보자 필독 꿀팁" />
-                <meta property="twitter:image" content="https://bundanghipublic.com/og-beginner.jpg" />
-                <link rel="canonical" href="https://bundanghipublic.com/bundang-entertainment-beginner-guide" />
+                <meta property="twitter:image" content="https://suwon.vip/og-beginner.jpg" />
+                <link rel="canonical" href="https://suwon.vip/suwon-entertainment-beginner-guide" />
             </Helmet>
             <SchemaJsonLd data={howToSchema} />
 

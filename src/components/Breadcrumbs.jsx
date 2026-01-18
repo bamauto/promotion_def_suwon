@@ -4,14 +4,14 @@ import { ChevronRight, Home } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 const routeNameMap = {
-    'bundang-hyperpub-guide': '하이퍼블릭',
-    'bundang-karaoke-guide': '가라오케',
-    'bundang-shirtsroom-guide': '셔츠룸',
-    'bundang-kimono-room-guide': '기모노룸',
-    'bundang-room-salon-guide': '룸살롱',
-    'bundang-hostbar-guide': '호빠',
-    'bundang-entertainment-price-guide': '가격 가이드',
-    'bundang-entertainment-beginner-guide': '초보자 가이드',
+    'suwon-highpub-guide': '하이퍼블릭',
+    'suwon-karaoke-guide': '가라오케',
+    'suwon-shirtsroom-guide': '셔츠룸',
+    'suwon-kimono-room-guide': '기모노룸',
+    'suwon-room-salon-guide': '룸살롱',
+    'suwon-hostbar-guide': '호빠',
+    'suwon-entertainment-price-guide': '가격 가이드',
+    'suwon-entertainment-beginner-guide': '초보자 가이드',
     'faq': 'FAQ',
     'contact': '문의하기',
     'terms': '이용약관',
@@ -32,7 +32,7 @@ const Breadcrumbs = () => {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://bundanghipublic.com/"
+            "item": "https://suwon.vip/"
         }
     ];
 
@@ -45,7 +45,7 @@ const Breadcrumbs = () => {
             "@type": "ListItem",
             "position": index + 2,
             "name": routeName,
-            "item": `https://bundanghipublic.com${routeTo}`
+            "item": `https://suwon.vip${routeTo}`
         });
     });
 

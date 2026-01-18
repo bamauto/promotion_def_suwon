@@ -25,7 +25,7 @@ const HyperPublicFAQ = () => {
         },
         {
             question: "혼자 방문해도(독고) 괜찮나요? 가격 차이가 있나요?",
-            answer: "네, 분당 하이퍼블릭 방문객의 약 40%가 1인 손님입니다. 가격 차이는 없으며, 오히려 1:1로 집중적인 케어를 받으실 수 있어 만족도가 높습니다. 어색하지 않게 담당 실장이 케어해 드립니다."
+            answer: "네, 수원 하이퍼블릭 방문객의 약 40%가 1인 손님입니다. 가격 차이는 없으며, 오히려 1:1로 집중적인 케어를 받으실 수 있어 만족도가 높습니다. 어색하지 않게 담당 실장이 케어해 드립니다."
         },
         {
             question: "초이스는 어떤 방식으로 진행되나요?",
@@ -33,7 +33,7 @@ const HyperPublicFAQ = () => {
         },
         {
             question: "1인당 평균 예산(주대)은 얼마 정도인가요?",
-            answer: "기본 양주 세트(약 13~16만원)에 아가씨 봉사료(T/C, 약 13만원)와 웨이터 팁(3~5만원)을 합산하여 계산합니다. 인원수와 추가 병 수에 따라 달라지므로, 방문 전 전화 문의 주시면 정확한 견적을 뽑아드립니다."
+            answer: "기본 양주 세트(약 18~22만원)에 아가씨 봉사료(T/C, 약 18만원)와 웨이터 팁(3~5만원)을 합산하여 계산합니다. 인원수와 추가 병 수에 따라 달라지므로, 방문 전 전화 문의 주시면 정확한 견적을 뽑아드립니다."
         },
         {
             question: "예약 없이 워킹으로 방문해도 되나요?",
@@ -45,7 +45,7 @@ const HyperPublicFAQ = () => {
         },
         {
             question: "아가씨들의 연령대는 어떻게 되나요?",
-            answer: "주로 20대 초중반의 대학생, 모델 지망생들이 많습니다. B점(서현)은 영(Young)한 스타일, A점(정자)은 고급스럽고 세련된 스타일 등 업소별 특색이 있으니 취향을 말씀해 주시면 맞춤 추천해 드립니다."
+            answer: "주로 20대 초중반의 대학생, 모델 지망생들이 많습니다. B점(영통)은 영(Young)한 스타일, A점(인계동)은 고급스럽고 세련된 스타일 등 업소별 특색이 있으니 취향을 말씀해 주시면 맞춤 추천해 드립니다."
         },
         {
             question: "2차(애프터)가 가능한가요?",
@@ -53,7 +53,7 @@ const HyperPublicFAQ = () => {
         },
         {
             question: "픽업 서비스 이용 방법은 어떻게 되나요?",
-            answer: "분당 전 지역(야탑, 이매, 서현, 수내, 정자, 미금, 오리, 판교) 어디든 24시간 무료 픽업 차량을 보내드립니다. 예약 시 계신 곳 위치만 알려주세요."
+            answer: "수원 전 지역(매탄동, 원천동, 영통, 권선동, 인계동, 권선동, 원천동, 광교) 어디든 24시간 무료 픽업 차량을 보내드립니다. 예약 시 계신 곳 위치만 알려주세요."
         },
         {
             question: "복장 제한이 있나요?",
@@ -66,10 +66,10 @@ const HyperPublicFAQ = () => {
     return (
         <>
             <Helmet>
-                <title>분당 하이퍼블릭 FAQ | 비용, 초이스, 혼술 등 자주 묻는 질문 10선</title>
-                <meta name="description" content="분당 하이퍼블릭 이용 전 필독! 가격, 초이스 방식, 혼자 방문(독고), 2차 여부 등 고객님들이 가장 궁금해하시는 10가지 질문에 대해 서우실장이 솔직하게 답변해 드립니다." />
-                <meta name="keywords" content="분당 하이퍼블릭 FAQ, 분당 하이퍼블릭 가격, 하이퍼블릭 혼자, 하이퍼블릭 초이스, 하이퍼블릭 2차" />
-                <link rel="canonical" href="https://bundanghipublic.com/bundang-hyperpub-guide/faq" />
+                <title>수원 하이퍼블릭 FAQ | 비용, 초이스, 혼술 등 자주 묻는 질문 10선</title>
+                <meta name="description" content="수원 하이퍼블릭 이용 전 필독! 가격, 초이스 방식, 혼자 방문(독고), 2차 여부 등 고객님들이 가장 궁금해하시는 10가지 질문에 대해 서우실장이 솔직하게 답변해 드립니다." />
+                <meta name="keywords" content="수원 하이퍼블릭 FAQ, 수원 하이퍼블릭 가격, 하이퍼블릭 혼자, 하이퍼블릭 초이스, 하이퍼블릭 2차" />
+                <link rel="canonical" href="https://suwon.vip/suwon-highpub-guide/faq" />
             </Helmet>
             <SchemaJsonLd data={faqSchema} />
 
@@ -96,7 +96,7 @@ const HyperPublicFAQ = () => {
                             <button onClick={() => window.location.href = 'tel:01026264833'} className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 transition-all">
                                 <Phone size={20} /> 전화로 물어보기
                             </button>
-                            <Link to="/bundang-hyperpub-guide" className="bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 transition-all">
+                            <Link to="/suwon-highpub-guide" className="bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 transition-all">
                                 <ChevronRight size={20} /> 하이퍼블릭 메인으로
                             </Link>
                         </div>

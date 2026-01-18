@@ -77,31 +77,32 @@ const VenueCard = ({ venue }) => (
     </article>
 );
 
-import kimonoRoomLogo from '../assets/kimonoroom_logo.png';
+import venueImg1 from '../assets/venue-img-6.webp';
+import venueImg2 from '../assets/venue-img-12.webp';
 
 const venues = {
     kimonoRoom: [
         {
             id: 'km-1',
-            name: '분당 기모노룸 A점',
+            name: '수원 프리미엄 기모노룸',
             type: 'Kimono Costume',
-            location: '분당 미금역 2번 출구',
+            location: '수원 권선동역 2번 출구',
             price: '코스 요리 포함',
             desc: '화려한 기모노와 유카타를 입은 매니저들의 이색적인 서비스를 경험할 수 있는 테마 룸살롱. 정갈한 사케와 함께 기억에 남는 특별한 시간을 선사합니다.',
             features: ['기모노 의상', '사케 소믈리에', '프리미엄 안주', '의전 서비스'],
-            img: kimonoRoomLogo,
-            imgAlt: '분당 기모노룸 A점 로고'
+            img: venueImg1,
+            imgAlt: '수원 프리미엄 기모노룸 인테리어'
         },
         {
             id: 'km-2',
-            name: '분당 기모노룸 B점',
+            name: '인계동 퓨전 기모노룸',
             type: 'Modern Fusion',
-            location: '분당 서현역 5번 출구',
+            location: '수원 영통역 5번 출구',
             price: '사케 무제한',
             desc: '현대적인 감각으로 재해석한 퓨전 기모노 바. 트렌디한 인테리어와 개량 기모노를 입은 매니저들의 활기찬 서비스를 즐길 수 있습니다. 젊은 층에게 인기가 높습니다.',
             features: ['퓨전 인테리어', '이자카야 안주', '개량 기모노', '네온 사인 포토존'],
-            img: kimonoRoomLogo,
-            imgAlt: '분당 기모노룸 B점 로고'
+            img: venueImg2,
+            imgAlt: '인계동 퓨전 기모노룸 인테리어'
         }
     ]
 };
@@ -131,8 +132,8 @@ const KimonoRoom = () => {
 
     const serviceSchema = generateServiceSchema(
         "Kimono Room",
-        "분당 기모노룸 예약 및 가격. 기모노 의상 테마의 이색 프리미엄 룸살롱.",
-        "https://bundanghipublic.com/bundang-kimono-room-guide",
+        "수원 기모노룸 예약 및 가격. 기모노 의상 테마의 이색 프리미엄 룸살롱.",
+        "https://suwon.vip/suwon-kimono-room-guide",
         "160000"
     );
 
@@ -141,32 +142,32 @@ const KimonoRoom = () => {
     return (
         <>
             <Helmet>
-                <title>분당 기모노룸 가격 예약 | 일본 테마 NO.1 서우실장</title>
-                <meta name="description" content="분당 기모노룸 완벽 가이드 | 기모노·유카타 의상 테마 | 매혹적인 일본 감성 | 프라이빗 서비스 | 전 지역 픽업 | 24시간 예약 ☎ 010-2626-4833" />
-                <meta name="keywords" content="분당 기모노룸, 분당 기모노 가격, 분당 기모노 예약, 분당 일본식 테마, 분당 이색 유흥, 분당 유카타" />
-                <meta property="og:title" content="분당 기모노룸 가격 예약 | NO.1 서우실장" />
-                <meta property="og:description" content="기모노·유카타 의상 테마 | 매혹적인 일본 감성 | 24시간 예약 ☎ 010-2626-4833" />
-                <meta property="og:image" content="https://bundanghipublic.com/og-kimono-room.jpg" />
+                <title>기모노 라운지 문화 탐색 | 수원 테마 경험 가이드</title>
+                <meta name="description" content="기모노 테마 라운지 경험 완벽 가이드 | 컨셉 이해·분위기·가격·이용 방법 비교 | 테마 라운지 문화 탐색 | 색다른 경험을 위한 선택 팁" />
+                <meta name="keywords" content="테마 라운지, 문화 경험, 특색 있는 바, 이색 체험, 라운지 컨셉, 테마별 라운지, 새로운 경험, 라운지 선택, 특별한 밤, 컨셉 라운지 이용법" />
+                <meta property="og:title" content="기모노 라운지 문화 가이드 | 테마 경험" />
+                <meta property="og:description" content="테마 라운지 문화 이해 | 컨셉 비교 | 이용 가이드" />
+                <meta property="og:image" content="https://suwon.vip/og-kimono-room.jpg" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="ko_KR" />
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:title" content="분당 기모노룸 | NO.1 서우실장" />
-                <meta property="twitter:description" content="기모노·유카타 의상 테마 | 매혹적인 감성 | 24시간 예약" />
-                <meta property="twitter:image" content="https://bundanghipublic.com/og-kimono-room.jpg" />
-                <link rel="canonical" href="https://bundanghipublic.com/bundang-kimono-room-guide" />
+                <meta property="twitter:title" content="기모노 라운지 문화 가이드" />
+                <meta property="twitter:description" content="테마 라운지 경험 | 컨셉 이해 | 이용 팁" />
+                <meta property="twitter:image" content="https://suwon.vip/og-kimono-room.jpg" />
+                <link rel="canonical" href="https://suwon.vip/suwon-kimono-room-guide" />
             </Helmet>
             <SchemaJsonLd data={[serviceSchema, faqSchema]} />
 
             <div className="pt-24 md:pt-32 min-h-screen bg-slate-950">
                 <div className="container mx-auto px-4 pb-12 max-w-6xl">
-                    <SectionTitle title="분당 기모노룸 가이드" subtitle="Exotic Atmosphere" />
+                    <SectionTitle title="수원 기모노룸 가이드" subtitle="Exotic Atmosphere" />
 
                     {/* Intro Text */}
                     <div className="mb-20 text-center max-w-4xl mx-auto">
                         <p className="text-xl text-slate-300 leading-relaxed font-light">
-                            분당 도심 속에서 만나는 <strong className="text-rose-400">작은 일본</strong>.<br />
+                            수원 도심 속에서 만나는 <strong className="text-rose-400">작은 일본</strong>.<br />
                             화려한 기모노와 유카타를 입은 매니저들이 선사하는<br />
                             이색적인 서비스로 특별한 추억을 만들어 보세요.
                         </p>
@@ -182,7 +183,7 @@ const KimonoRoom = () => {
                         </p>
                         <p>
                             가장 큰 차별점은 역시 <strong>의상(Costume)</strong>입니다. 매니저들이 화려한 색감의 기모노나 유카타를 입고 의전 서비스를 제공하며,
-                            마치 일본 여행을 온 듯한 착각을 불러일으킵니다. 중요 바이어 접대나 기억에 남는 파티 장소로 강력 추천하는 <strong>분당의 히든 플레이스</strong>입니다.
+                            마치 일본 여행을 온 듯한 착각을 불러일으킵니다. 중요 바이어 접대나 기억에 남는 파티 장소로 강력 추천하는 <strong>수원의 히든 플레이스</strong>입니다.
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
                             <div className="bg-slate-800 p-4 rounded-xl border border-slate-700 flex items-center justify-center gap-3">
@@ -200,7 +201,7 @@ const KimonoRoom = () => {
                     <div id="recommendation" className="mb-24">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-1.5 h-8 bg-rose-500 rounded-full"></div>
-                            <h2 className="text-3xl font-bold text-white">2. 분당 기모노룸 추천 목록</h2>
+                            <h2 className="text-3xl font-bold text-white">2. 수원 기모노룸 추천 목록</h2>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
                             {venues.kimonoRoom.map(venue => <VenueCard key={venue.id} venue={venue} />)}
@@ -290,7 +291,7 @@ const KimonoRoom = () => {
                         <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 relative z-10">지루한 일상에 색다른 파격을</h2>
                         <p className="text-red-100 mb-8 max-w-2xl mx-auto relative z-10">
                             경험해보지 못한 새로운 즐거움.<br />
-                            분당 기모노룸에서 잊지 못할 추억을 만들어 드립니다.
+                            수원 기모노룸에서 잊지 못할 추억을 만들어 드립니다.
                         </p>
                         <button onClick={() => window.location.href = 'tel:01026264833'} className="bg-white text-red-900 font-bold py-4 px-12 rounded-full shadow-lg hover:scale-105 transition-transform relative z-10 flex items-center gap-2 mx-auto">
                             <Phone fill="currentColor" size={20} /> 010-2626-4833 테마 룸 예약

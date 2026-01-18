@@ -78,56 +78,32 @@ const VenueCard = ({ venue }) => (
     </article>
 );
 
-import hyperPublicLogoA from '../assets/hyperpublic_logo_a.png';
-import hyperPublicLogoB from '../assets/hyperpublic_logo_b.png';
-import hyperPublicLogoC from '../assets/hyperpublic_logo_c.png';
-import hyperPublicLogoD from '../assets/hyperpublic_logo_d.png';
+import venueImg1 from '../assets/venue-img-7.webp';
+import venueImg2 from '../assets/venue-img-3.webp';
 
 const venues = {
     hyperPublic: [
         {
             id: 'hp-1',
-            name: '분당 하이퍼블릭 A점',
+            name: '수원 하이퍼블릭 프리미엄',
             type: 'Premium High-End',
-            location: '분당 정자동 카페거리 인근',
-            price: '양주 SET 160,000원 ~',
-            desc: '정자동 특유의 고급스러운 분위기를 그대로 담았습니다. 전 룸 명품관 스타일의 인테리어와 에르메스 식기 사용. VVIP 비즈니스 접대에 최적화된 럭셔리 공간입니다.',
+            location: '수원 인계동 카페거리 인근',
+            price: '양주 SET 200,000원 ~',
+            desc: '인계동 특유의 고급스러운 분위기를 그대로 담았습니다. 전 룸 명품관 스타일의 인테리어와 프리미엄 식기 사용. VVIP 비즈니스 접대에 최적화된 럭셔리 공간입니다.',
             features: ['발렛 파킹', '호텔급 룸서비스', '테라스 룸', '외국어 가능 매니저'],
-            img: hyperPublicLogoA,
-            imgAlt: '분당 하이퍼블릭 A점 로고'
+            img: venueImg1,
+            imgAlt: '수원 프리미엄 하이퍼블릭 인테리어'
         },
         {
             id: 'hp-2',
-            name: '분당 하이퍼블릭 B점',
+            name: '인계동 하이퍼블릭 라운지',
             type: 'Mega Size',
-            location: '분당 서현역 로데오거리',
-            price: '양주 SET 130,000원 ~',
-            desc: '60개의 룸을 보유한 분당 최대 규모 하이퍼블릭. 바다를 테마로 한 청량감 있는 인테리어와 20대 초반 위주의 영(Young)한 매니저 라인업이 특징입니다.',
-            features: ['최대 규모', 'EDM 파티 타임', '생일 샴페인 증정', '합석 가능'],
-            img: hyperPublicLogoB,
-            imgAlt: '분당 하이퍼블릭 B점 로고'
-        },
-        {
-            id: 'hp-3',
-            name: '분당 하이퍼블릭 C점',
-            type: 'Private Business',
-            location: '판교 테크노벨리 유스페이스',
+            location: '수원 영통역 로데오거리',
             price: '양주 SET 180,000원 ~',
-            desc: 'IT 기업 임원분들이 선호하는 프라이빗 하이퍼블릭. 미술관을 연상시키는 모던하고 차분한 인테리어로, 조용한 대화와 깊이 있는 술자리를 원하시는 분들께 추천합니다.',
-            features: ['멤버십 우선 예약', '방음 완비', '골프 존 룸', '고급 위스키바'],
-            img: hyperPublicLogoC,
-            imgAlt: '분당 하이퍼블릭 C점 로고'
-        },
-        {
-            id: 'hp-4',
-            name: '분당 하이퍼블릭 D점',
-            type: 'Casual & Trendy',
-            location: '분당 야탑역 먹자골목',
-            price: '맥주/소주 SET 판매',
-            desc: '퇴근 후 가볍게 들릴 수 있는 캐주얼 하이퍼블릭. 부담 없는 가격과 레트로한 감성의 인테리어로 2030 직장인들의 회식 장소로 인기 만점입니다.',
-            features: ['가성비 갑', '다트/게임기 완비', '혼술 환영', '자율 복장'],
-            img: hyperPublicLogoD,
-            imgAlt: '분당 하이퍼블릭 D점 로고'
+            desc: '60개의 룸을 보유한 수원 최대 규모 하이퍼블릭. 바다를 테마로 한 청량감 있는 인테리어와 20대 초반 위주의 영(Young)한 매니저 라인업이 특징입니다.',
+            features: ['최대 규모', 'EDM 파티 타임', '생일 샴페인 증정', '합석 가능'],
+            img: venueImg2,
+            imgAlt: '인계동 하이퍼블릭 라운지 인테리어'
         }
     ]
 };
@@ -135,16 +111,16 @@ const venues = {
 const HyperPublic = () => {
     const faqList = [
         {
-            question: "혼자 가도 되나요?",
-            answer: "물론입니다. 최근 1인(독고) 손님이 40% 이상입니다. 어색하지 않게 1:1로 밀착 케어해 드립니다."
+            question: "1인 방문 시 차별이나 추가 요금이 있나요?",
+            answer: "일반적으로 추가 요금은 없습니다. 다만 업소에 따라 2인 이상 예약 권장 정책을 두기도 하니 미리 확인하세요. 1인 방문 고객이 약 40%를 차지할 정도로 흔합니다."
         },
         {
-            question: "픽업 서비스가 있나요?",
-            answer: "분당 전 지역 (정자, 판교, 서현, 야탑, 미금) 고급 세단 무료 픽업 가능합니다."
+            question: "픽업 서비스의 범위와 비용은 어떻게 되나요?",
+            answer: "대부분의 프리미엄 펍은 수원 시내 주요 지역(인계동, 영통, 광교)에서 무료 픽업을 제공합니다. 다만 대기 시간이 길거나 먼 지역은 추가 요금이 발생할 수 있으니 사전 확인이 필요합니다."
         },
         {
-            question: "카드로 계산하면 더 비싼가요?",
-            answer: "정찰제를 원칙으로 하지만, 카드 수수료/부가세 부분은 업소마다 차이가 있을 수 있으니 예약 시 확인 부탁드립니다."
+            question: "결제 방식별 가격 차이가 있나요?",
+            answer: "업소마다 정책이 다릅니다. 현금은 기본 가격, 카드는 3~5% 수수료가 추가되는 경우가 있습니다. 예약 시 총액과 결제 방식별 차이를 명확히 확인하세요."
         }
     ];
 
@@ -157,8 +133,8 @@ const HyperPublic = () => {
 
     const serviceSchema = generateServiceSchema(
         "HyperPublic Club",
-        "분당 하이퍼블릭 예약 및 가격 안내. 24시간 픽업 서비스 및 최신 시설 완비.",
-        "https://bundanghipublic.com/bundang-hyperpub-guide",
+        "수원 하이퍼블릭 예약 및 가격 안내. 24시간 픽업 서비스 및 최신 시설 완비.",
+        "https://suwon.vip/suwon-highpub-guide",
         "130000"
     );
 
@@ -167,62 +143,63 @@ const HyperPublic = () => {
     return (
         <>
             <Helmet>
-                <title>분당 하이퍼블릭 가격 예약 | 정자·서현·판교 NO.1 서우실장</title>
-                <meta name="description" content="분당 하이퍼블릭 TOP 4 완벽 가이드 | 정자동·서현역·판교 지역별 가격표 | 무한초이스·매직미러 | 100% 정찰제 | 최상급 매니저 대기 | 24시간 예약 ☎ 010-2626-4833" />
-                <meta name="keywords" content="분당 하이퍼블릭, 분당 하이퍼블릭 가격, 분당 하이퍼블릭 예약, 정자동 하이퍼블릭, 서현 하이퍼블릭, 판교 하이퍼블릭, 분당 룸살롱, 분당 유흥" />
-                <meta property="og:title" content="분당 하이퍼블릭 가격 예약 | NO.1 서우실장" />
-                <meta property="og:description" content="정자·서현·판교 TOP 4 | 무한초이스 | 100% 정찰제 | 24시간 예약 ☎ 010-2626-4833" />
-                <meta property="og:image" content="https://bundanghipublic.com/og-hyperpub.jpg" />
+                <title>수원 하이퍼블릭 선택 가이드 2024 | 지역별 가격·시설·분위기 비교</title>
+                <meta name="description" content="수원 프라이빗 펍 TOP 5 지역별 완전정복 | 인계동 프리미엄 vs 영통 대형 vs 광교 비즈니스 스타일 비교 | 초심자부터 숙련 고객까지 선택 기준 제시 | 숨겨진 명소 리스트" />
+                <meta name="keywords" content="수원 프라이빗 펍, 하이퍼블릭 문화, 펍 선택 가이드, 인계동 펍, 영통 라운지, 광교 바, 프라이빗 룸, 펍 문화 이해, 라운지 분위기 비교, 수원 술집 문화, 펍 에티켓, 초보자 가이드" />
+                <meta property="og:title" content="수원 하이퍼블릭 선택 가이드 | 지역별·분위기별 비교" />
+                <meta property="og:description" content="프라이빗 펍 문화 이해부터 선택까지 | 인계동·영통·광교 비교 | 초보자 가이드" />
+                <meta property="og:image" content="https://suwon.vip/og-highpub.jpg" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
-                <meta property="og:image:alt" content="분당 하이퍼블릭 가격 및 예약 가이드" />
+                <meta property="og:image:alt" content="수원 하이퍼블릭 선택 가이드" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="ko_KR" />
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:title" content="분당 하이퍼블릭 | NO.1 서우실장" />
-                <meta property="twitter:description" content="정자·서현·판교 TOP 4 | 무한초이스 | 100% 정찰제" />
-                <meta property="twitter:image" content="https://bundanghipublic.com/og-hyperpub.jpg" />
-                <link rel="canonical" href="https://bundanghipublic.com/bundang-hyperpub-guide" />
+                <meta property="twitter:title" content="수원 하이퍼블릭 선택 가이드 2024" />
+                <meta property="twitter:description" content="지역별·분위기별 비교 | 초보자 가이드 | 에티켓 안내" />
+                <meta property="twitter:image" content="https://suwon.vip/og-highpub.jpg" />
+                <link rel="canonical" href="https://suwon.vip/suwon-highpub-guide" />
             </Helmet>
             <SchemaJsonLd data={[serviceSchema, faqSchema]} />
 
             <div className="pt-24 md:pt-32 min-h-screen bg-slate-950">
                 <div className="container mx-auto px-4 pb-12 max-w-6xl">
-                    <SectionTitle title="분당 하이퍼블릭 예약 및 가격" subtitle="Premium Service" />
+                    <SectionTitle title="수원 프라이빗 펍 완벽 가이드" subtitle="선택과 이해" />
 
                     {/* Intro Text */}
                     <div className="mb-20 text-center max-w-4xl mx-auto">
                         <p className="text-xl text-slate-300 leading-relaxed font-light">
-                            분당 서우실장이 보장하는 <strong className="text-rose-400">하이엔드 퀄리티</strong>와 <strong className="text-white">투명한 정찰제</strong>.<br />
-                            내상 없는 확실한 초이스와 품격 있는 술자리를 약속드립니다.<br />
-                            비즈니스 접대부터 프라이빗한 모임까지, 상황에 맞는 최적의 장소를 안내해 드립니다.
+                            프라이빗 펍 문화를 <strong className="text-rose-400">제대로 이해</strong>하고 <strong className="text-white">나에게 맞는 곳</strong>을 선택하세요.<br />
+                            지역별 특징, 분위기, 가격대까지 객관적으로 비교 분석해 드립니다.<br />
+                            초심자부터 숙련 고객까지, 모두를 위한 선택 가이드를 제공합니다.
                         </p>
                     </div>
 
                     <TableOfContents sections={sections} />
 
                     {/* 1. Definition & Features */}
-                    <ContentBlock id="definition" title="1. 하이퍼블릭이란? (Definition)">
+                    <ContentBlock id="definition" title="1. 프라이빗 펍 문화 이해하기">
                         <p>
-                            <strong>하이퍼블릭(Hyper-Public)</strong>은 기존 퍼블릭(Public) 업소의 합리적인 가격 시스템은 유지하되,
-                            <strong> '하이엔드(High-End)'급 퀄리티</strong>를 접목시킨 새로운 트렌드의 룸입니다.
+                            <strong>프라이빗 펍(Private Pub)</strong> 또는 하이퍼블릭은 2010년대 중반 강남에서 시작된
+                            새로운 유형의 <strong>프라이빗 라운지 문화</strong>를 지칭합니다.
                         </p>
                         <p>
-                            과거 텐카페나 텐프로 등 고가 업소에서만 볼 수 있었던 최상급 인테리어와 수질을
-                            보다 부담 없는 가격으로 즐길 수 있어, 최근 분당 지역 비즈니스 접대 및 모임의 메인 트렌드로 자리 잡았습니다.
+                            기존 펍(Pub)이 오픈된 바 카운터 중심이었다면, 프라이빗 펍은 독립된 룸 문화를 도입한 것이 특징입니다.
+                            모던한 인테리어와 선택형 시스템을 결합하여, 수원 지역에서는 2015년경부터 급성장하여
+                            현재 인계동·영통·광교 지역에 30곳 이상이 운영 중입니다.
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
                             <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-700 text-center">
                                 <Sparkles className="mx-auto text-amber-500 mb-2" />
-                                <div className="font-bold text-white">상위 1% 수질</div>
+                                <div className="font-bold text-white">다양한 스타일</div>
                             </div>
                             <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-700 text-center">
                                 <DollarSign className="mx-auto text-amber-500 mb-2" />
-                                <div className="font-bold text-white">합리적 정찰제</div>
+                                <div className="font-bold text-white">투명한 가격 구조</div>
                             </div>
                             <div className="bg-slate-800/50 p-4 rounded-xl border border-slate-700 text-center">
                                 <Users className="mx-auto text-amber-500 mb-2" />
-                                <div className="font-bold text-white">마인드 최우선</div>
+                                <div className="font-bold text-white">취향 기반 선택</div>
                             </div>
                         </div>
                     </ContentBlock>
@@ -231,7 +208,7 @@ const HyperPublic = () => {
                     <div id="recommendation" className="mb-24">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-1.5 h-8 bg-amber-500 rounded-full"></div>
-                            <h2 className="text-3xl font-bold text-white">2. 분당 하이퍼블릭 추천 TOP 2</h2>
+                            <h2 className="text-3xl font-bold text-white">2. 수원 하이퍼블릭 추천 TOP 2</h2>
                         </div>
 
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -242,7 +219,7 @@ const HyperPublic = () => {
                     {/* 3. System Guide */}
                     <ContentBlock id="system" title="3. 이용 시스템 및 가이드">
                         <p>
-                            분당 하이퍼블릭을 처음 방문하시나요? 투명한 이용을 위해 기본적인 시스템을 안내해 드립니다. 대부분의 업소가 비슷한 룰을 따르고 있으나, <strong>서우실장</strong>을 통해 예약하시면 더욱 특별한 혜택을 받으실 수 있습니다.
+                            수원 하이퍼블릭을 처음 방문하시나요? 투명한 이용을 위해 기본적인 시스템을 안내해 드립니다. 대부분의 업소가 비슷한 룰을 따르고 있으나, <strong>서우실장</strong>을 통해 예약하시면 더욱 특별한 혜택을 받으실 수 있습니다.
                         </p>
 
                         <h4 className="text-xl font-bold text-white mt-8 mb-4">A. 초이스 시스템 (Choice)</h4>
@@ -278,7 +255,7 @@ const HyperPublic = () => {
                                     <tr className="border-b border-slate-800">
                                         <td className="py-3 px-4 font-bold">봉사료 (T/C)</td>
                                         <td className="py-3 px-4">매니저 1인당 타임비</td>
-                                        <td className="py-3 px-4">업소별 13~15만원 선</td>
+                                        <td className="py-3 px-4">업소별 18~20만원 선</td>
                                     </tr>
                                     <tr className="border-b border-slate-800">
                                         <td className="py-3 px-4 font-bold">웨이터 팁 (W/T)</td>
@@ -317,7 +294,7 @@ const HyperPublic = () => {
                             </div>
 
                             <div className="mt-6 text-center">
-                                <Link to="/bundang-hyperpub-guide/faq" className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-400 font-bold transition-colors">
+                                <Link to="/suwon-highpub-guide/faq" className="inline-flex items-center gap-2 text-amber-500 hover:text-amber-400 font-bold transition-colors">
                                     더 많은 질문과 답변 보기 <ChevronRight size={18} />
                                 </Link>
                             </div>
@@ -330,7 +307,7 @@ const HyperPublic = () => {
                         <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 relative z-10">오늘 밤, 최고의 주인공이 되어보세요</h2>
                         <p className="text-amber-100 mb-8 max-w-2xl mx-auto relative z-10">
                             고민은 즐거움만 늦출 뿐입니다. 지금 바로 전화주세요.<br />
-                            분당 No.1 서우실장이 책임지고 모시겠습니다.
+                            수원 No.1 서우실장이 책임지고 모시겠습니다.
                         </p>
                         <button onClick={() => window.location.href = 'tel:01026264833'} className="bg-white text-amber-800 font-bold py-4 px-12 rounded-full shadow-lg hover:scale-105 transition-transform relative z-10 flex items-center gap-2 mx-auto">
                             <Phone fill="currentColor" size={20} /> 010-2626-4833 예약하기

@@ -36,20 +36,20 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/bundang-hyperpub-guide" element={<HyperPublic />} />
-          <Route path="/bundang-karaoke-guide" element={<Karaoke />} />
-          <Route path="/bundang-hostbar-guide" element={<Hostbar />} />
-          <Route path="/bundang-shirtsroom-guide" element={<ShirtsRoom />} />
-          <Route path="/bundang-kimono-room-guide" element={<KimonoRoom />} />
-          <Route path="/bundang-room-salon-guide" element={<RoomSalon />} />
+          <Route path="/suwon-highpub-guide" element={<HyperPublic />} />
+          <Route path="/suwon-karaoke-guide" element={<Karaoke />} />
+          <Route path="/suwon-hostbar-guide" element={<Hostbar />} />
+          <Route path="/suwon-shirtsroom-guide" element={<ShirtsRoom />} />
+          <Route path="/suwon-kimono-room-guide" element={<KimonoRoom />} />
+          <Route path="/suwon-room-salon-guide" element={<RoomSalon />} />
           <Route path="/contact" element={<Contact />} />
 
           {/* Phase 3: Content Expansion Routes */}
-          <Route path="/bundang-hyperpub-guide/faq" element={<HyperPublicFAQ />} />
-          <Route path="/bundang-karaoke-guide/faq" element={<KaraokeFAQ />} />
-          <Route path="/bundang-room-salon-guide/faq" element={<RoomSalonFAQ />} />
-          <Route path="/bundang-entertainment-price-guide" element={<PriceGuide />} />
-          <Route path="/bundang-entertainment-beginner-guide" element={<BeginnerGuide />} />
+          <Route path="/suwon-highpub-guide/faq" element={<HyperPublicFAQ />} />
+          <Route path="/suwon-karaoke-guide/faq" element={<KaraokeFAQ />} />
+          <Route path="/suwon-room-salon-guide/faq" element={<RoomSalonFAQ />} />
+          <Route path="/suwon-entertainment-price-guide" element={<PriceGuide />} />
+          <Route path="/suwon-entertainment-beginner-guide" element={<BeginnerGuide />} />
 
           {/* Phase 4: Legal Routes */}
           <Route path="/terms" element={<Terms />} />

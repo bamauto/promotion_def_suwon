@@ -77,53 +77,32 @@ const VenueCard = ({ venue }) => (
     </article>
 );
 
-import shirtsRoomLogo from '../assets/shirtsroom_logo.png';
+import venueImg1 from '../assets/venue-img-4.webp';
+import venueImg2 from '../assets/venue-img-10.webp';
 
 const venues = {
     shirtsRoom: [
         {
             id: 's-1',
-            name: '분당 셔츠룸 A점',
+            name: '수원 프리미엄 셔츠룸',
             type: 'Original Shirts',
-            location: '분당 야탑역 1번 출구',
+            location: '수원 매탄동역 1번 출구',
             price: '룸티 30,000원 ~',
-            desc: '정통 셔츠룸의 강자. "셔츠는 핏이다"라는 슬로건 아래 체계적인 사이즈 관리와 스타일링 서비스를 제공합니다. 야탑 최대 규모로 언제 가도 대기 없이 즐기실 수 있습니다.',
-            features: ['전원 화이트 셔츠', '20대 초중반', '야탑 최대 규모', '주차 100%'],
-            img: shirtsRoomLogo,
-            imgAlt: '분당 셔츠룸 A점 로고'
+            desc: '정통 셔츠룸의 강자. "셔츠는 핏이다"라는 슬로건 아래 체계적인 사이즈 관리와 스타일링 서비스를 제공합니다. 매탄동 최대 규모로 언제 가도 대기 없이 즐기실 수 있습니다.',
+            features: ['전원 화이트 셔츠', '20대 초중반', '매탄동 최대 규모', '주차 100%'],
+            img: venueImg1,
+            imgAlt: '수원 프리미엄 셔츠룸 인테리어'
         },
         {
             id: 's-2',
-            name: '분당 셔츠룸 B점',
+            name: '인계동 모델 셔츠룸',
             type: 'Model Line',
-            location: '분당 서현역 로데오거리',
+            location: '수원 영통역 로데오거리',
             price: '룸티 40,000원 ~',
             desc: '모델 출신 매니저들로 구성된 프리미엄 라인. 170cm 이상의 늘씬한 비주얼 군단이 압도적인 퍼포먼스와 서비스를 선사합니다.',
             features: ['평균 신장 168cm', '모델 출신', '런웨이 쇼', '예약 필수'],
-            img: shirtsRoomLogo,
-            imgAlt: '분당 셔츠룸 B점 로고'
-        },
-        {
-            id: 's-3',
-            name: '분당 셔츠룸 C점',
-            type: 'Business Casual',
-            location: '판교역 아비뉴프랑',
-            price: '룸티 35,000원 ~',
-            desc: '판교 직장인을 위한 비즈니스 최적화 룸. 깔끔하고 쾌적한 인테리어에서 편안하게 접대하거나 회식을 즐길 수 있습니다.',
-            features: ['조용한 분위기', '비즈니스 접대', '단체석 완비', '법카 환영'],
-            img: shirtsRoomLogo,
-            imgAlt: '분당 셔츠룸 C점 로고'
-        },
-        {
-            id: 's-4',
-            name: '분당 셔츠룸 D점',
-            type: 'Hard Core',
-            location: '분당 정자동 중심상가',
-            price: '문의 필요',
-            desc: '화끈한 분위기를 원하시는 분들을 위한 곳. 셔츠룸의 기본을 넘어서는 과감한 터치와 마인드로 잊지 못할 밤을 만들어 드립니다.',
-            features: ['수위 보장', '무제한 터치', '하드코어', '풀살롱 시스템'],
-            img: shirtsRoomLogo,
-            imgAlt: '분당 셔츠룸 D점 로고'
+            img: venueImg2,
+            imgAlt: '인계동 모델 셔츠룸 인테리어'
         }
     ]
 };
@@ -153,8 +132,8 @@ const ShirtsRoom = () => {
 
     const serviceSchema = generateServiceSchema(
         "Shirts Room Club",
-        "분당 셔츠룸 가격 및 시스템 안내. 비즈니스 접대에 최적화된 화이트 셔츠 컨셉.",
-        "https://bundanghipublic.com/bundang-shirtsroom-guide",
+        "수원 셔츠룸 가격 및 시스템 안내. 비즈니스 접대에 최적화된 화이트 셔츠 컨셉.",
+        "https://suwon.vip/suwon-shirtsroom-guide",
         "130000"
     );
 
@@ -163,33 +142,33 @@ const ShirtsRoom = () => {
     return (
         <>
             <Helmet>
-                <title>분당 셔츠룸 가격 예약 | 이색 테마 NO.1 서우실장</title>
-                <meta name="description" content="분당 셔츠룸 완벽 가이드 | 화이트셔츠 이색 컨셉 | 정자·서현·판교 추천 업소 | 프라이빗 룸 완비 | 투명한 주대 | 24시간 예약 ☎ 010-2626-4833" />
-                <meta name="keywords" content="분당 셔츠룸, 분당 셔츠룸 가격, 분당 셔츠룸 예약, 정자동 셔츠룸, 서현 셔츠룸, 분당 이색 유흥" />
-                <meta property="og:title" content="분당 셔츠룸 가격 예약 | NO.1 서우실장" />
-                <meta property="og:description" content="화이트셔츠 이색 컨셉 | 프라이빗 룸 | 24시간 예약 ☎ 010-2626-4833" />
-                <meta property="og:image" content="https://bundanghipublic.com/og-shirtsroom.jpg" />
+                <title>셔츠룸 문화 이해 및 선택 가이드 | 수원 이색 라운지</title>
+                <meta name="description" content="셔츠룸 컨셉과 경험 완벽 정복 | 기존 라운지와의 차이점·분위기·비용 비교 | 초보자를 위한 이용 가이드 및 기본 에티켓 | 다양한 라운지 문화 이해하기" />
+                <meta name="keywords" content="셔츠룸 컨셉, 라운지 문화, 이색 바, 테마 라운지, 셔츠룸 차이, 라운지 비교, 문화 이해, 새로운 경험, 취향별 선택, 라운지 트렌드" />
+                <meta property="og:title" content="셔츠룸 문화 가이드 | 이색 라운지 이해" />
+                <meta property="og:description" content="셔츠룸 컨셉 이해 | 다른 라운지와 비교 | 이용 가이드" />
+                <meta property="og:image" content="https://suwon.vip/og-shirtsroom.jpg" />
                 <meta property="og:image:width" content="1200" />
                 <meta property="og:image:height" content="630" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="ko_KR" />
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:title" content="분당 셔츠룸 | NO.1 서우실장" />
-                <meta property="twitter:description" content="화이트셔츠 이색 컨셉 | 프라이빗 룸 | 24시간 예약" />
-                <meta property="twitter:image" content="https://bundanghipublic.com/og-shirtsroom.jpg" />
-                <link rel="canonical" href="https://bundanghipublic.com/bundang-shirtsroom-guide" />
+                <meta property="twitter:title" content="셔츠룸 문화 가이드" />
+                <meta property="twitter:description" content="이색 라운지 이해 | 컨셉 비교 | 이용 가이드" />
+                <meta property="twitter:image" content="https://suwon.vip/og-shirtsroom.jpg" />
+                <link rel="canonical" href="https://suwon.vip/suwon-shirtsroom-guide" />
             </Helmet>
             <SchemaJsonLd data={[serviceSchema, faqSchema]} />
 
             <div className="pt-24 md:pt-32 min-h-screen bg-slate-950">
                 <div className="container mx-auto px-4 pb-12 max-w-6xl">
-                    <SectionTitle title="분당 셔츠룸 시스템 가이드" subtitle="White Shirt Fantasy" />
+                    <SectionTitle title="수원 셔츠룸 시스템 가이드" subtitle="White Shirt Fantasy" />
 
                     {/* Intro Text */}
                     <div className="mb-20 text-center max-w-4xl mx-auto">
                         <p className="text-xl text-slate-300 leading-relaxed font-light">
                             남자의 로망, <strong className="text-white">화이트 셔츠</strong>.<br />
-                            섹시함과 청순함이 공존하는 분당 셔츠룸에서<br />
+                            섹시함과 청순함이 공존하는 수원 셔츠룸에서<br />
                             지친 하루의 비즈니스 스트레스를 완벽하게 해소하세요.
                         </p>
                     </div>
@@ -203,7 +182,7 @@ const ShirtsRoom = () => {
                             초이스 후 룸 안에서 셔츠로 환복하는 퍼포먼스(인사 타임)가 시그니처이며, 핏된 셔츠 라인이 주는 시각적인 즐거움이 특징입니다.
                         </p>
                         <p>
-                            분당 셔츠룸은 강남의 '란제리', '레깅스' 룸보다 진입 장벽이 낮으면서도, 퍼블릭보다 훨씬 과감하고 화끈한 노는 분위기를 형성합니다.
+                            수원 셔츠룸은 강남의 '란제리', '레깅스' 룸보다 진입 장벽이 낮으면서도, 퍼블릭보다 훨씬 과감하고 화끈한 노는 분위기를 형성합니다.
                             <span className="text-blue-400 font-bold">비즈니스 접대</span>와 <span className="text-blue-400 font-bold">화끈한 뒷풀이</span> 양쪽 모두를 만족시키는 최고의 하이브리드 업종입니다.
                         </p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
@@ -228,7 +207,7 @@ const ShirtsRoom = () => {
                     <div id="recommendation" className="mb-24">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="w-1.5 h-8 bg-blue-500 rounded-full"></div>
-                            <h2 className="text-3xl font-bold text-white">2. 분당 셔츠룸 추천 업소</h2>
+                            <h2 className="text-3xl font-bold text-white">2. 수원 셔츠룸 추천 업소</h2>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                             {venues.shirtsRoom.map(venue => <VenueCard key={venue.id} venue={venue} />)}

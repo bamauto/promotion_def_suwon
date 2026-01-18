@@ -40,8 +40,8 @@ const RoomSalonFAQ = () => {
             answer: "네, 기존에 방문하셔서 마음에 드셨던 매니저가 있다면 사전 지명 예약이 가능합니다. 인기 매니저는 예약이 빨리 차므로 최소 하루 전, 늦어도 당일 오후 5시 전에는 연락 주셔야 확실한 배정이 가능합니다."
         },
         {
-            question: "강남 룸살롱과 분당의 차이는 무엇인가요?",
-            answer: "퀄리티 면에서는 강남 텐카페/쩜오에 뒤지지 않으면서, 가격 거품은 뺀 것이 분당의 장점입니다. 강남 대비 약 70~80% 수준의 비용으로 동급의 서비스를 즐기실 수 있어 실속파 사장님들이 많이 넘어오십니다."
+            question: "강남 룸살롱과 수원의 차이는 무엇인가요?",
+            answer: "퀄리티 면에서는 강남 텐카페/쩜오에 뒤지지 않으면서, 가격 거품은 뺀 것이 수원의 장점입니다. 강남 대비 약 70~80% 수준의 비용으로 동급의 서비스를 즐기실 수 있어 실속파 사장님들이 많이 넘어오십니다."
         },
         {
             question: "혼자 방문해서 조용히 술 마실 수 있나요?",
@@ -66,10 +66,10 @@ const RoomSalonFAQ = () => {
     return (
         <>
             <Helmet>
-                <title>분당 룸살롱 비즈니스 접대 FAQ | 법인 결제, 지명 예약, 견적 문의</title>
-                <meta name="description" content="성공적인 비즈니스 접대를 위한 분당 룸살롱 이용 가이드. 법인 비용 처리, 외국어 가능 매니저, 프라이빗 보안 시스템 등 접대 담당자가 가장 궁금해하는 10가지 질문에 답해드립니다." />
-                <meta name="keywords" content="분당 룸살롱 접대, 분당 룸살롱 법인카드, 분당 룸살롱 가격, 강남 분당 룸살롱 비교" />
-                <link rel="canonical" href="https://bundanghipublic.com/bundang-room-salon-guide/faq" />
+                <title>수원 룸살롱 비즈니스 접대 FAQ | 법인 결제, 지명 예약, 견적 문의</title>
+                <meta name="description" content="성공적인 비즈니스 접대를 위한 수원 룸살롱 이용 가이드. 법인 비용 처리, 외국어 가능 매니저, 프라이빗 보안 시스템 등 접대 담당자가 가장 궁금해하는 10가지 질문에 답해드립니다." />
+                <meta name="keywords" content="수원 룸살롱 접대, 수원 룸살롱 법인카드, 수원 룸살롱 가격, 강남 수원 룸살롱 비교" />
+                <link rel="canonical" href="https://suwon.vip/suwon-room-salon-guide/faq" />
             </Helmet>
             <SchemaJsonLd data={faqSchema} />
 
@@ -99,7 +99,7 @@ const RoomSalonFAQ = () => {
                             <button onClick={() => window.location.href = 'tel:01026264833'} className="bg-gradient-to-r from-amber-700 to-amber-800 hover:from-amber-600 hover:to-amber-700 text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg">
                                 <Phone size={20} /> 접대 견적 상담
                             </button>
-                            <Link to="/bundang-room-salon-guide" className="bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 transition-all">
+                            <Link to="/suwon-room-salon-guide" className="bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-2 transition-all">
                                 <ChevronRight size={20} /> 룸살롱 정보 더보기
                             </Link>
                         </div>

@@ -19,22 +19,22 @@ const SchemaJsonLd = ({ data }) => {
 export const generateLocalBusinessSchema = () => ({
     "@context": "https://schema.org",
     "@type": "EntertainmentBusiness",
-    "name": "분당 하이퍼블릭 서우실장",
-    "image": "https://bundanghipublic.com/og-image.jpg",
+    "name": "수원 하이퍼블릭 서우실장",
+    "image": "https://suwon.vip/og-image.jpg",
     "telephone": "010-2626-4833",
-    "url": "https://bundanghipublic.com/",
+    "url": "https://suwon.vip/",
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "분당구 황새울로",
-        "addressLocality": "Seongnam-si",
+        "streetAddress": "인계동",
+        "addressLocality": "Suwon-si",
         "addressRegion": "Gyeonggi-do",
-        "postalCode": "13591",
+        "postalCode": "16517",
         "addressCountry": "KR"
     },
     "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 37.3827,
-        "longitude": 127.1189
+        "latitude": 37.2636,
+        "longitude": 127.0286
     },
     "openingHoursSpecification": [
         {
@@ -52,11 +52,11 @@ export const generateLocalBusinessSchema = () => ({
     ],
     "priceRange": "$$",
     "areaServed": [
-        { "@type": "City", "name": "Bundang-gu" },
-        { "@type": "City", "name": "Pangyo" },
-        { "@type": "City", "name": "Seohyun" },
-        { "@type": "City", "name": "Jeongja" },
-        { "@type": "City", "name": "Yatap" }
+        { "@type": "City", "name": "Suwon" },
+        { "@type": "City", "name": "Ingye-dong" },
+        { "@type": "City", "name": "Yeongtong" },
+        { "@type": "City", "name": "Gwanggyo" },
+        { "@type": "City", "name": "Maetan-dong" }
     ]
 });
 
@@ -67,13 +67,13 @@ export const generateServiceSchema = (serviceName, description, url, offerPrice)
     "serviceType": serviceName,
     "provider": {
         "@type": "LocalBusiness",
-        "name": "분당 하이퍼블릭 서우실장",
-        "image": "https://bundanghipublic.com/og-image.jpg",
+        "name": "수원 하이퍼블릭 서우실장",
+        "image": "https://suwon.vip/og-image.jpg",
         "telephone": "010-2626-4833"
     },
     "areaServed": {
         "@type": "City",
-        "name": "Bundang"
+        "name": "Suwon"
     },
     "description": description,
     "url": url,
@@ -112,12 +112,12 @@ export const generateBreadcrumbSchema = (items) => ({
 export const generateOrganizationSchema = () => ({
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "서우실장 분당 하이퍼블릭",
-    "alternateName": "분당 서우실장",
-    "url": "https://bundanghipublic.com",
-    "logo": "https://bundanghipublic.com/logo.png",
-    "image": "https://bundanghipublic.com/og-home.jpg",
-    "description": "분당 최고급 하이퍼블릭, 가라오케, 룸살롱 프리미엄 가이드. 투명한 정찰제, 24시간 예약 가능.",
+    "name": "서우실장 수원 하이퍼블릭",
+    "alternateName": "수원 서우실장",
+    "url": "https://suwon.vip",
+    "logo": "https://suwon.vip/logo.png",
+    "image": "https://suwon.vip/og-home.jpg",
+    "description": "수원 최고급 하이퍼블릭, 가라오케, 룸살롱 프리미엄 가이드. 투명한 정찰제, 24시간 예약 가능.",
     "telephone": "+82-10-2626-4833",
     "sameAs": [
         "https://t.me/pbsewoo",
@@ -138,10 +138,10 @@ export const generateOrganizationSchema = () => ({
     },
     "address": {
         "@type": "PostalAddress",
-        "streetAddress": "분당구 황새울로",
-        "addressLocality": "성남시",
+        "streetAddress": "인계동",
+        "addressLocality": "수원시",
         "addressRegion": "경기도",
-        "postalCode": "13591",
+        "postalCode": "16517",
         "addressCountry": "KR"
     }
 });
